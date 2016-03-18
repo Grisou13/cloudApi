@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d7814ec8-5de4-4660-ad10-fbba94a95d4c" name="cpnv" url="http://ricci.cpnv-es.ch">
+        <fileTransfer host="ftp.ricci.cpnv-es.ch" port="21" rootFolder="/cloud" password="dffcdfcfdfcddfdadf9cdfc8dfc4dfd8" username="ricci">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" maxConnections="10" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
