@@ -10,7 +10,19 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+
             </div>
+            <div class="badge">
+                token : <i>{{ JWTAuth::fromUser(Auth::user()) }}</i>
+            </div>
+
+            {!! Form::open(array('url' => '/api/v1/file',"files"=>true)) !!}
+                {!! Form::hidden("token",JWTAuth::fromUser(Auth::user())) !!}
+                {!! Form::file("upload") !!}
+                {!! Form::text("filename") !!}
+                {!! Form::submit() !!}
+            {!! Form::close() !!}
+
         </div>
     </div>
 </div>

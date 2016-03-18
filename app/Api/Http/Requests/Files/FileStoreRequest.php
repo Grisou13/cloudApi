@@ -8,9 +8,7 @@ use Dingo\Api\Auth\Auth;
 class FileStoreRequest extends Request
 {
     public static $rules = [
-        "filename"=>"sometimes|required",
-        "path"=>"required|min:1",
-        "password"=>"required|min:6",
+        "filename"=>"required|min:2",
         "file"=>"required"
     ];
     /**

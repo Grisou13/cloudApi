@@ -78,8 +78,8 @@ class FileController extends Controller
 
         if($request->file("upload")->isValid()) {
             //retrive input
-            $folder = $request->input("folder","/");
-            $filename = $request->input("filename");
+            $folder = dirname($request->input("filename"));
+            $filename = basename($request->input("filename"));
             $user = $this->auth()->user();
             //create the modal
             $file = new File();

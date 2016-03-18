@@ -6,7 +6,9 @@
  * @package  Laravel
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
-
+error_reporting(E_ALL & ~E_DEPRECATED);
+ini_set("display_errors", 0);
+ini_set('xdebug.max_nesting_level', 5000);
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
