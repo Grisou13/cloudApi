@@ -39,9 +39,9 @@ class FileRepository implements Filesystem
      * FileRepository constructor.
      * @param User|null $user
      */
-    public function __construct(User $user)
+    public function __construct(/*User $user*/)
     {
-        $this->setUser($user);
+        //$this->setUser($user);
         //$this->base_path = storage_path($this->getBasePath());
         $this->storage = $this->getStorage();
 
@@ -89,6 +89,11 @@ class FileRepository implements Filesystem
 
         if($storage)//$storage = true means we want some sort of app defined storage, otherwise, we just return the path
         {
+            if(file_exists($path))
+                return $path;
+            if(file_exists(storage_path($path)))
+                return storage_path($path);
+
             return $this->getBasePath().$path;
         }
         return $path;
@@ -105,6 +110,7 @@ class FileRepository implements Filesystem
     {
 
         $user = $this->user();
+        //dd($user->toArray());
         if(!$user)
             return $this->getRoot();
         //var_dump($user);
@@ -159,13 +165,13 @@ class FileRepository implements Filesystem
      */
     public function move($from,$to)
     {
-        $this->getStorage()->move($from,$to);
+        $this->getStorage()->move($this->buildPath($from),$this->buildPath($to));
     }
 
     /**
      * @return Filesystem
      */
-    protected function getStorage()
+    public function getStorage()
     {
         //return File;
         //$adaptor = Storage::disk()->getDriver()->getAdapter();

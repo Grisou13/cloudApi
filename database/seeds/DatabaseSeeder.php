@@ -2,6 +2,7 @@
 
 use App\Calendar;
 
+use App\Contact;
 use Illuminate\Database\Seeder;
 use App\User;
 
@@ -21,7 +22,7 @@ class UserTableSeeder extends Seeder {
         User::unguard();
         $user = User::create(array('id'=>"1",'email' => 'thomas.ricci@cpnv.ch',"username"=>"Admin","password"=>bcrypt("Password")));
         User::reguard();
-        factory(User::class, 2)->create();//just create more users
+
         /*
          * File creation
          */
@@ -54,20 +55,22 @@ class UserTableSeeder extends Seeder {
         $calendar->owner()->associate($user);
         $calendar->save();
         //create some events
-        $events = factory(Event::class, 50)->make()->each(function(Event $e) use ($calendar){
+        $events = factory(Event::class, 5)->make()->each(function(Event $e) use ($calendar){
             $e->calendar()->associate($calendar);
             $e->save();
         });
-        //$events->each(function($e){$e->save();});
-
+        $events->each(function($e){$e->save();});
+        factory(Event::class,10)->create();
         /*
          * Contact creation
          */
         //$this->info("Creating contacts");
-        /*$contacts = factory(\App\Contact::class)->make()->each(function($c) use ($user){
+        $contacts = factory(Contact::class,5)->make()->each(function(Contact $c) use ($user){
             $c->owner()->associate($user);
         });
-        $contacts->each(function($c){$c->save();});*/
+        $contacts->each(function($c){$c->save();});
+        factory(Contact::class,10)->create();
+
 
         /*
          * Roles and permissions

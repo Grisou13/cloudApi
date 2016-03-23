@@ -2,6 +2,14 @@
 
 namespace App\Api\Http\Controllers;
 
+use App\Api\Http\Requests\Contacts\ContactDestroyRequest;
+use App\Api\Http\Requests\Contacts\ContactShowRequest;
+use App\Api\Http\Requests\Contacts\ContactStoreRequest;
+use App\Api\Http\Requests\Contacts\ContactUpdateRequest;
+use App\Contact;
+use Dingo\Api\Contract\Http\Request;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
+
 class ContactController extends Controller
 {
 
@@ -12,18 +20,16 @@ class ContactController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('api.auth',['only'=>[
-          'index'
-          ]]);
+        $this->middleware('api.auth');
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return $this->user()->contacts()->get();
     }
 
     /**
@@ -31,10 +37,10 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -42,9 +48,14 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactStoreRequest $request)
     {
-        //
+        $payload = $request->only(["name","photo","emails","addresses","pnoneNumbers","company","job_title"]);
+        dd($payload);
+        $contact = new Contact($payload);
+        if($contact->save())
+            throw new BadRequestHttpException("could not create contact");
+        return $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.contact.show",$contact),$contact);
     }
 
     /**
@@ -53,9 +64,9 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ContactShowRequest $contact)
     {
-        //
+        return $contact;
     }
 
     /**
@@ -64,10 +75,10 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -76,9 +87,11 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ContactUpdateRequest $request, Contact $contact)
     {
-        //
+        $payload = $request->only(["name","photo","emails","addresses","pnoneNumbers","company","job_title"]);
+        $contact->update($payload);
+        return $this->response->accepted(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.contact.show",$contact),$contact);
     }
 
     /**
@@ -87,8 +100,15 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ContactDestroyRequest $contact)
     {
-        //
+        $contact->delete();
+        return $this->response->accepted();
+    }
+
+    public function share(Request $request,Contact $contact)
+    {
+        $contact->shares()->create(["users"=>[$request->get("user")]]);
+        return $this->response->created();
     }
 }

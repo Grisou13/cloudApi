@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Api\Http\Requests\Users;
+namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
-use Bouncer;
-use Dingo\Api\Auth\Auth;
 
-class UserStoreRequest extends Request
+class ContactStoreRequest extends Request
 {
     public static $rules = [
-        "email"=>"required|email|unique:users,email",
-        "username"=>"required|min:6",
-        "password"=>"required|min:6"
+        "name"=>"required|mind:1",
+        "photo"=>"sometimes|max:25000000",
+        "emails"=>"sometimes",
+        "addresses"=>"sometimes",
+        "phoneNumbers"=>"sometimes",
+        "company"=>"sometimes|min:1",
+        "job_title"=>"sometimes|min:1"
     ];
     /**
      * Determine if the user is authorized to make this request.

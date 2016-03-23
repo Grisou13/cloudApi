@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Api\Http\Requests\Users;
+namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
-use Bouncer;
 
-class UserUpdateRequest extends Request
+class ContactUpdateRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,6 +28,6 @@ class UserUpdateRequest extends Request
      */
     public function rules()
     {
-        return array_merge(UserStoreRequest::$rules,['email' => 'unique:users,email_address,'.$this->user()->id]);//just keep the same rules as for storing
+        return ContactStoreRequest::$rules;//just keep the same rules as for storing
     }
 }

@@ -12,6 +12,7 @@ use Bouncer;
 use Dingo\Api\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
+use League\Flysystem\Util;
 use Storage;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -32,6 +33,7 @@ class FileController extends Controller
     public function __construct(FileRepository $repo)
     {
         $this->middleware('api.auth');
+        //$repo->setUser($this->user());
         $this->repository = $repo;
     }
 
@@ -47,7 +49,7 @@ class FileController extends Controller
         if($request->has("user") && Bouncer::allows("view-others-files",$user))//admins can see others people files
             return File::with("shares")->whereHas("owner",function($query) use ($request){
                 $user = $request->get("user");
-                $query-where("id","=",$user->id);
+                $query-where("id","=",$user);
             })->get();
         //echo $user;
         return $user->files()->get();
@@ -77,24 +79,32 @@ class FileController extends Controller
         //$this->repository->create(compact("filename","folder","file"));
 
         if($request->file("upload")->isValid()) {
-            //retrive input
-            $folder = dirname($request->input("filename"));
-            $filename = basename($request->input("filename"));
+            //var_dump($this->user());
+
+            $filepath = $request->input("filepath");
+
             $user = $this->auth()->user();
             //create the modal
             $file = new File();
             $file->owner()->associate($user);
-            $file->folder = $folder?$folder:$filename;//automatically will take the dirname()
-            $file->filename = $filename;
-            $file->storage_path=$this->repository->buildPath($file->full_path);
-            $file->saveOrFail();
 
+            $file->filepath = $filepath;
+            $file->storage_path=storage_path($this->repository->buildPath($file->full_path));
+
+            $file->saveOrFail();
             //move the uplaoded file
             $f = $request->file("upload");
-            $f->move($file->storage_path);
-            Storage::drive()->copy($f->getPath(),$file->full_path);
-            $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("file.show",$file));
-            return ["file"=>$file];
+            $directory = storage_path($this->repository->buildPath($file->folder));
+            if($f->move($directory,$file->filename))
+            {
+                //Storage::drive()->copy($f->getPath(),$file->full_path);
+                return $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.file.show",$file),$file);
+                return ["file"=>$file];
+            }
+            else
+            {
+                throw new HttpException("could not move file");
+            }
         }
         else{
             throw new HttpException("file not valid");
@@ -102,27 +112,45 @@ class FileController extends Controller
 
 
     }
+    public function copy(Request $request)
+    {
+        $from = $this->repository->buildPath($request->get("from"));
+        $to = $this->repository->buildPath($request->get("to"));
+        $this->repository->copy($from,$to);
+        return $this->response()->accepted();
+    }
     public function move(Request $request)
     {
         $from = $this->repository->buildPath($request->get("from"));
         $to = $this->repository->buildPath($request->get("to"));
         $this->repository->move($from,$to);
+        return $this->response()->accepted();
     }
     public function addFolder(Request $request)
     {
         $path = $request->get("path");
-        $this->repository->makeDirectory($path);
+        if($this->repository->makeDirectory($path))
+            return $this->response->accepted();
+        throw new HttpException("could not create folder");
     }
-    public function share(Request $request,File $file)
+    public function deleteFolder(Request $request)
     {
-        //$share = new Share();
-        $file->shares()->create(["users"=>[$this->auth()->user()]]);
+        $path = $request->get("path");
+        if($this->repository->deleteDirectory($path))
+            return $this->response->accepted();
+        throw new HttpException("could not delete folder");
+    }
+    public function share(Request $request,File $file,User $user)
+    {
+        $file->shares()->create(["participants"=>[$user]]);
+        dd($file);
+        return $this->response->created();
     }
     public function tree(Request $request)
     {
         $path = $this->repository->buildPath($request->get("path"));
         $storage = Storage::disk(Storage::getDefaultDriver());
-        return array_merge($storage->directories($path),$storage->files($path));
+        return array_merge($this->repository->directories($path),$this->repository->files($path));
     }
     /**
      * Display the specified resource.
@@ -141,10 +169,10 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -153,9 +181,13 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, File $file)
     {
-        //
+        if( $request->hasFile("upload") && $request->file("upload")->isValid() )
+            $this->repository->put($file->storage_path,$request->file("upload"));
+        if($request->has("content"))
+            $this->repository->put($file->storage_path,$request->get("content"));
+        return $this->response->accepted();
     }
 
     /**
@@ -164,8 +196,9 @@ class FileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(File $file)
     {
-        //
+
+        $this->repository->delete($file->storage_path);
     }
 }

@@ -69,9 +69,8 @@ class InitialMigration extends Migration
             $table->increments('id');
             $table->integer("owner_id")->unsigned();
             //table data
-            $table->text("folder");
             $table->string("storage")->default("local");
-            $table->string("filename");
+            $table->string("filepath");
             $table->string("storage_path");
             //times...
             $table->timestamps();
@@ -92,7 +91,7 @@ class InitialMigration extends Migration
         Schema::create("share_links",function (Blueprint $table) {
             $table->text('url')->index();
             $table->string("token")->index();
-            $table->time("expires")->default(Carbon::createFromTime(24)->minute);//a link expires in a day...configurable by the user
+            $table->time("expires");//->default(Carbon::createFromTime(24)->minute);//a link expires in a day...configurable by the user
             $table->integer("share_id")->unsigned();
             //times...
             $table->timestamp("created_at");
@@ -100,7 +99,7 @@ class InitialMigration extends Migration
             $table->foreign("share_id")->references("id")->on("shares");
         });
         Schema::create('user_share', function (Blueprint $table) {
-            $table->integer("access_id")->unsigned();
+            //$table->integer("access_id")->unsigned();
             $table->integer("user_id")->unsigned();
             $table->integer("share_id")->unsigned();
             //foreign key stuff

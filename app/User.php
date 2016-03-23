@@ -40,7 +40,16 @@ class User extends Authenticatable
     }
     public function files()
     {
-        return $this->hasMany("App\\File","owner_id");
+        return $this->hasMany(File::class,"owner_id");
     }
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class,"owner_id");
+    }
+    public function calendars()
+    {
+        return $this->hasMany(Calendar::class,"owner_id");
+    }
+
 
 }

@@ -14,11 +14,11 @@ class Share extends Model
     }
     public function owner()
     {
-        return $this->belongsTo("App\\User","id","owner_id");
+        return $this->belongsTo("App\\User");
     }
     public function participants()
     {
-        return $this->belongsToMany("App\\User");
+        return $this->belongsToMany("App\\User","user_share");
     }
     /*public function access()
     {

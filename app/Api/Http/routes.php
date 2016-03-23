@@ -49,8 +49,10 @@
         });
 
         $api->resource("user","UserController");
+        //$api->get("user/{user}/shares",["uses"=>"UserController@shares"]);
         $api->resource("share","ShareController");
         $api->resource("file","FileController");
+        $api->post("file/{file}/share",["uses"=>"FileController@share"]);
         $api->resource("calendar","CalendarController");
         $api->resource("calendar.event","CalendarEventController");
         $api->resource("contact","ContactController");

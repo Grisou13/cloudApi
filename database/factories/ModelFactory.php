@@ -37,21 +37,42 @@ $factory->define(Event::class,function(Faker\Generator $faker){
     ];
 });
 $factory->define(App\File::class,function(Faker\Generator $faker){
-    $file = $faker->image(storage_path("tmp/"));
+    $filename = $faker->image(storage_path("tmp/"),$fullPath=false);
     return [
-        "filename"=>$file,
-        "folder"=>"/", //put all generated files at the root of the users directory
+        "filepath"=>"/{$faker->word}/".basename($filename),
         "owner_id"=>factory(User::class)->create()->id,
         "storage_path"=>function($file){
             $user = User::find($file["owner_id"]);
             $repo = FileRepository::instance($user);
-            return $repo->buildPath($file["folder"].basename($file["filename"]));
+            return $repo->buildPath($file["filepath"]);
         }
     ];
 });
 
 $factory->define(App\Contact::class,function(Faker\Generator $faker){
     return [
-
+        "name"=>$faker->name,
+        "photo"=>$faker->imageUrl(),
+        "emails"=>function(Faker\Generator $faker){
+            $emails = new \StdClass();
+            $emails->work = $faker->companyEmail;
+            $emails->private = $faker->email;
+            return $emails;
+        },
+        "addresses"=>function(Faker\Generator $faker){
+            $addr = new \StdClass();
+            $addr->work = $faker->address;
+            $addr->private = $faker->address;
+            return $addr;
+        },
+        "phoneNumbers"=>function(Faker\Generator $faker){
+            $phone = new \StdClass();
+            $phone->work = $faker->phoneNumber;
+            $phone->private = $faker->phoneNumber;
+            return $phone;
+        },
+        "company"=>$faker->company,
+        "job_title"=>$faker->title,
+        "owner_id"=>factory(User::class)->create()->id,
     ];
 });

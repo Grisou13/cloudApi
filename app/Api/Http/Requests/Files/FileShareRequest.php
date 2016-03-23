@@ -1,16 +1,18 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: thomas.ricci
+ * Date: 23.03.2016
+ * Time: 09:26
+ */
+
 namespace App\Api\Http\Requests\Files;
 
-use App\Api\Http\Requests\Request;
-use Bouncer;
-use Dingo\Api\Auth\Auth;
 
-class FileStoreRequest extends Request
+use App\Api\Http\Requests\Request;
+
+class FileShareRequest extends Request
 {
-    public static $rules = [
-        "filepath"=>"required|min:2|unique:files,filepath",
-        "upload"=>"required"
-    ];
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -18,7 +20,8 @@ class FileStoreRequest extends Request
      */
     public function authorize()
     {
-        return true;//everybody can upload a file
+        $file = $this->get("file");
+        return $file->owner() == $this->user();
     }
 
     /**
@@ -28,6 +31,8 @@ class FileStoreRequest extends Request
      */
     public function rules()
     {
-        return static::$rules;
+        return [
+            "user"=>"required|exists:users,deleted_at,NOT_NULL"
+        ];
     }
 }

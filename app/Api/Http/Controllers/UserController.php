@@ -7,6 +7,8 @@ use App\Api\Http\Requests\Users\UserStoreRequest;
 use App\Api\Http\Requests\Users\UserDestroyRequest;
 use App\Api\Http\Requests\Users\UserShowRequest;
 use App\Api\Http\Requests\Users\UserUpdateRequest;
+use App\Share;
+use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
 use App\Api\Http\Requests;
 
@@ -39,9 +41,8 @@ class UserController extends Controller
     public function __construct(Bouncer $gate)
     {
         $this->gate = $gate;
-        
-//        if(!env("API_DEBUG",false))
-          $this->middleware('api.auth');
+//      if(!env("API_DEBUG",false))
+        $this->middleware('api.auth');
 
 
     }
@@ -99,9 +100,10 @@ class UserController extends Controller
     {
         $payload = $request->only("email","username","password");
         $payload["password"] = bcrypt($payload["password"]);
-        dd($payload);
         $user = User::create($payload);
-        return $user;
+        if($user->save())
+            return $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.user.show",$user),$user);
+        throw new StoreResourceFailedException("could not create user");
     }
 
     /**
@@ -116,16 +118,6 @@ class UserController extends Controller
         return $user;
     }
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit($id)
-    // {
-    //     //
-    // }
 
     /**
      * Update the specified resource in storage.
@@ -139,7 +131,7 @@ class UserController extends Controller
     {
         $payload = $request->only("email","username","password");
         $user->update($payload);
-        return $user;
+        return $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.user.show",$user).$user);
     }
 
     /**
@@ -151,6 +143,14 @@ class UserController extends Controller
     public function destroy(UserDestroyRequest $request,User $user)
     {
         $user->delete();
-        return [];
+        return $this->response->accepted();
+    }
+    public function shares(Request $request,User $user)
+    {
+        $participating =  Share::with("participants")->whereHas("participants",function($query) use ($user){
+            return $query->where("id","=",$user->id);
+        })->get();
+        $ownes = Share::has("owner","=",$user->id)->get();
+        dd($ownes,$participating);
     }
 }

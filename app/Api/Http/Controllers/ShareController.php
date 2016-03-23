@@ -2,6 +2,10 @@
 
 namespace App\Api\Http\Controllers;
 
+use App\Share;
+use App\User;
+use Dingo\Api\Http\Request;
+
 class ShareController extends Controller
 {
 
@@ -90,5 +94,15 @@ class ShareController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function ownedShares(Request $request, User $user)
+    {
+        return $user->shares();
+    }
+    public function inShares(Request $request,User $user)
+    {
+        return Share::whereHas("participants",function($query) use ($user){
+            $query->where("id","=",$user->id);
+        })->get();
     }
 }

@@ -6,6 +6,7 @@ use App\Api\Repositories\FileRepository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use League\Flysystem\Util;
 
 class File extends Model
 {
@@ -17,10 +18,10 @@ class File extends Model
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillable = ["folder","filename","storage_path"];
+    protected $fillable = ["filepath","storage_path"];
     //protected $attributes = ["full_path"];//add extra attributes to the model
-    protected $appends = ["full_path"];//add it to the json representation
-    protected $hidden = ["storage_path","storage"];
+    protected $appends = ["full_path","folder","filename"];//add it to the json representation
+    protected $hidden = [/*"storage_path",*/"storage","filepath"];
 
     public function shares()
     {
@@ -30,21 +31,17 @@ class File extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function setFolderAttribute($value)
+    public function getFolderAttribute()
     {
-        $path = Str::startsWith("/",$value)?$value:"/".$value;
-        //$path = Str::endsWith("/",$value)?substr($value,0,strlen($value)-1):$value;
-        return $this->attributes["folder"] = $path;
+        return str_replace("\\","/",Util::pathinfo($this->attributes["filepath"])["dirname"]);
     }
-    public function setFilenameAttribute($value)
+    public function getFilenameAttribute()
     {
-        return $this->attributes["filename"] = basename($value);
+        return Util::pathinfo($this->attributes["filepath"])["basename"];
     }
     public function getFullPathAttribute()
     {
-        $path = $this->attributes["folder"];
-        $path = Str::endsWith("/",$path)?substr($path,0,strlen($path)-1):$path;
-        return $path."/".$this->attributes["filename"];
+        return $this->attributes["filepath"];
     }
 
 }

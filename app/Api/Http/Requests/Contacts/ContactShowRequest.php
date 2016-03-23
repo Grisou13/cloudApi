@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Api\Http\Requests\Users;
+namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
-use Silber\Bouncer\Bouncer;
 
-class UserDestroyRequest extends Request
+class ContactShowRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(Bouncer $gate)
+    public function authorize()
     {
-        if($gate->is($this->user())->a("admin"))
-            return true;
-        if($this->get("user")->id == $this->user()->id)
+        $user = app(Auth::class)->user();
+        if(Bouncer::is($user)->a("admin") ||
+            $this->get("user")->id == $user->id)
             return true;
         return false;
     }

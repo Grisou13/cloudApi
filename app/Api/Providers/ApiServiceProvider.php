@@ -3,13 +3,17 @@
 namespace App\Api\Providers;
 
 use Dingo\Api\Routing\Router;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Routing\Router as IlluminateRouter;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Exception\HttpResponseException;
 use Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class ApiServiceProvider extends ServiceProvider
 {
     protected $namespace = 'App\Api\Http\Controllers';
+    protected $version = "v1";
     /**
      * Bootstrap the application services.
      *
@@ -19,6 +23,9 @@ class ApiServiceProvider extends ServiceProvider
     public function boot(IlluminateRouter $router)
     {
         parent::boot($router);
+        app('Dingo\Api\Exception\Handler')->register(function (ModelNotFoundException $exception) {
+            throw new NotFoundHttpException($exception->getMessage(),$previous = $exception);
+        });
     }
 
     /**
@@ -38,7 +45,7 @@ class ApiServiceProvider extends ServiceProvider
      */
     public function map(Router $api)
     {
-        $api->group(['version'=>'v1','namespace' => $this->namespace], function ($api) {
+        $api->group(['version'=>$this->version,'namespace' => $this->namespace], function ($api) {
             require app_path('Api/Http/routes.php');
         });
     }

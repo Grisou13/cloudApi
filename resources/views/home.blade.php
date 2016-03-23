@@ -12,11 +12,10 @@
                 </div>
 
             </div>
-            <div class="badge">
-                token : <i>{{ JWTAuth::fromUser(Auth::user()) }}</i>
-            </div>
+            <p>token : </p>
+            <textarea>{{ JWTAuth::fromUser(Auth::user()) }}</textarea>
 
-            {!! Form::open(array('url' => '/api/v1/file',"files"=>true)) !!}
+            {!! Form::open(["url"=>"test_api","files"=>true]) !!}
                 {!! Form::hidden("token",JWTAuth::fromUser(Auth::user())) !!}
                 {!! Form::file("upload") !!}
                 {!! Form::text("filename") !!}

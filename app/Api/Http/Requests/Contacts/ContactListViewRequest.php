@@ -1,23 +1,22 @@
 <?php
 
-namespace App\Api\Http\Requests\Users;
+namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
-use Silber\Bouncer\Bouncer;
 
-class UserDestroyRequest extends Request
+class ContactListViewRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(Bouncer $gate)
+    public function authorize()
     {
-        if($gate->is($this->user())->a("admin"))
+        $user = app('Dingo\Api\Auth\Auth')->user();
+        if(Bouncer::is($user)->a("admin") || Bouncer::allow("view-users",$user)){
             return true;
-        if($this->get("user")->id == $this->user()->id)
-            return true;
+        }
         return false;
     }
 
