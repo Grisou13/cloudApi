@@ -3,6 +3,7 @@
 namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
+use Silber\Bouncer\Bouncer;
 
 class ContactListViewRequest extends Request
 {
@@ -11,10 +12,10 @@ class ContactListViewRequest extends Request
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(Bouncer $gate)
     {
-        $user = app('Dingo\Api\Auth\Auth')->user();
-        if(Bouncer::is($user)->a("admin") || Bouncer::allow("view-users",$user)){
+
+        if($gate->allows("view-others-contacts",$this->user()) || $this->route("contact")->owner()->getResults()->id == $this->user()->id){
             return true;
         }
         return false;

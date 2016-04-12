@@ -13,7 +13,7 @@ class FileDestroyRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return $this->get("file")->owner() == $this->user();
     }
 
     /**

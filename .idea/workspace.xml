@@ -5,34 +5,317 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66c5d9ce-3adb-4865-831a-74fd80e6b48b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactDestroyRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactListViewRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactShowRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactStoreRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactUpdateRequest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/actions/LoginActions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/actions/QuoteActions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/app.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/AuthenticatedApp.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/AuthenticatedComponent.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/Home.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/Login.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/Quote.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/components/Signup.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/constants/LoginConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/constants/QuoteConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/dispatchers/AppDispatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/services/AuthService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/services/QuoteService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/services/RouterContainer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/stores/BaseStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/stores/LoginStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/authenticable/stores/QuoteStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/CHANGES.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/CODE_OF_CONDUCT.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/ISSUE_TEMPLATE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/SPONSORS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/API.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/Glossary.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/Introduction.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/Troubleshooting.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/ComponentLifecycle.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/ConfirmingNavigation.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/DynamicRouting.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/Histories.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/IndexRoutes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/MinimizingBundleSize.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/NavigatingOutsideOfComponents.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/RouteConfiguration.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/RouteMatching.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/ServerRendering.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/docs/guides/testing.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/active-links/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/active-links/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/animations/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/animations/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/animations/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-flow/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-flow/auth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-flow/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/About.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/App.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/Dashboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/Landing.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/Login.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/Logout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/PageOne.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/PageTwo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/components/User.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/config/routes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/auth-with-shared-root/utils/auth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/breadcrumbs/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/breadcrumbs/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/breadcrumbs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/confirming-navigation/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/confirming-navigation/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/dynamic-segments/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/dynamic-segments/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/global.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/components/App.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/components/Dashboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/components/GlobalNav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Calendar/components/Calendar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Calendar/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/components/Course.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/components/Dashboard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/components/Nav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Announcements/components/Announcements.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Announcements/components/Sidebar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Announcements/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Announcements/routes/Announcement/components/Announcement.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Announcements/routes/Announcement/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Assignments/components/Assignments.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Assignments/components/Sidebar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Assignments/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Assignments/routes/Assignment/components/Assignment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Assignments/routes/Assignment/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Grades/components/Grades.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Course/routes/Grades/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Grades/components/Grades.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Grades/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Messages/components/Messages.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Messages/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Profile/components/Profile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/routes/Profile/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/huge-apps/stubs/COURSES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/master-detail/ContactStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/master-detail/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/master-detail/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/master-detail/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/nested-animations/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/nested-animations/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/nested-animations/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/passing-props-to-children/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/passing-props-to-children/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/passing-props-to-children/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/pinterest/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/pinterest/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/query-params/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/query-params/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/sidebar/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/sidebar/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/sidebar/data.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/sidebar/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/examples/webpack.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/karma.conf.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/AsyncUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/History.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/IndexLink.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/IndexRedirect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/IndexRoute.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/Lifecycle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/Link.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/PatternUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/PropTypes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/Redirect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/Route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/RouteContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/RouteUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/Router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/RouterContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/RouterUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/RoutingContext.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/TransitionUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/.eslintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/AsyncUtils-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/IndexLink-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/IndexRedirect-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/IndexRoute-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/Link-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/Redirect-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/RouteComponent-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/Router-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/RouterContext-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-History-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-Link-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-Router-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-isActive-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-serverRendering-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/_bc-transitionHooks-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/createRoutesFromReactChildren-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/execSteps.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/formatPattern-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/getParamNames-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/getParams-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/isActive-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/matchPattern-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/matchRoutes-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/push-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/resetHash.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/serverRendering-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/transitionHooks-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/__tests__/useRouterHistory-test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/browserHistory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/computeChangedRoutes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/createMemoryHistory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/createRouterHistory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/createTransitionManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/deprecateObjectProperties.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/getComponents.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/getRouteParams.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/hashHistory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/isActive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/match.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/matchRoutes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/routerWarning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/useRouterHistory.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/modules/useRoutes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/scripts/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/scripts/release.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/tests.node.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/tests.webpack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/upgrade-guides/v1.0.0.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/upgrade-guides/v2.0.0.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_to_del/react-router-master/webpack.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareDestroyRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareListViewRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareShareRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareShowRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareStoreRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Shares/ShareUpdateRequest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CalendarEvent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Directory.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/ACLSeeder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/app.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/docs.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/docs.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/app.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/doc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/doc.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/Api.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/ApiConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/AppDispatcher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/AuthenticatedComponent.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/BaseStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/_app.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/_docs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/app.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/components/Breadcrumb.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/components/File.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/components/FileBrowser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/components/FileList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/constants/FileConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/stores/FileStorage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/file_browser/utils/FileHelpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/actions/LoginActions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/actions/QuoteActions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/App.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/Dashboard.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/Home.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/Login.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/Signup.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/components/_AuthenticatedApp.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/constants/LoginConstants.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/services/AuthService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/services/RouterContainer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/stores/LoginStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/main/stores/QuoteStore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.delete.1.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.delete.65.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.delete.77.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.1.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.19.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.24.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.25.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.26.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.27.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.65.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.read.77.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.write.1.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.write.19.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.write.24.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.write.65.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/node_modules/contextify/build/Release/obj/contextify/contextify.tlog/link-VCTIP.write.77.tlog" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/sass/docs.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/api/docs.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/docs.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/db.sqlite" afterPath="$PROJECT_DIR$/storage/db.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_ide_helper.php" afterPath="$PROJECT_DIR$/_ide_helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarEventController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarEventController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/ContactController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/ContactController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/ShareController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/ShareController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Api/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileStoreRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileStoreRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/AuthRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/AuthRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactDestroyRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactDestroyRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactListViewRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactListViewRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactShowRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactShowRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactStoreRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactStoreRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactUpdateRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactUpdateRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileDestroyRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileDestroyRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShowRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShowRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserDestroyRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserDestroyRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserStoreRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserStoreRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserUpdateRequest.php" afterPath="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserUpdateRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Http/routes.php" afterPath="$PROJECT_DIR$/app/Api/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php" afterPath="$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Repositories/FileRepository.php" afterPath="$PROJECT_DIR$/app/Api/Repositories/FileRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Contact.php" afterPath="$PROJECT_DIR$/app/Contact.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/File.php" afterPath="$PROJECT_DIR$/app/File.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Share.php" afterPath="$PROJECT_DIR$/app/Share.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Policies/SharePolicy.php" afterPath="$PROJECT_DIR$/app/Policies/SharePolicy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/file.txt" afterPath="$PROJECT_DIR$/storage/file.txt" />
     </list>
     <ignored path="src.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,51 +354,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContactController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/ContactController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.48276">
-              <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.344828">
-              <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.24156305">
+              <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/UserController.php">
+      <file leaf-file-name="2016_02_12_104938_initial_migration.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.724138">
-              <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="154" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.115385">
+              <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Http/routes.php">
+      <file leaf-file-name="Directory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Directory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.413794">
-              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Share.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Share.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.4482758">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -124,40 +387,64 @@
       <file leaf-file-name="ModelFactory.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.724138">
-              <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <file leaf-file-name="File.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/File.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.896551">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state vertical-scroll-proportion="-13.807693">
+              <caret line="48" column="70" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShareController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/ShareController.php">
+      <file leaf-file-name="DocController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/DocController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76404494">
-              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
               <folding>
-                <element signature="e#44#58#0#PHP" expanded="true" />
+                <element signature="e#44#52#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileShareRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php">
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.586207">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+              <folding>
+                <marker date="1460467812000" expanded="true" signature="849:857" placeholder=" Authenticates the user with his email, and password. Returns a Json Web Token ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileActionCreator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -169,37 +456,38 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CoffeeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
     <option name="SCHEME" value="Project" />
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="artisan api:docs" />
-      <command text="artisan sqlite:refresh" />
-      <command text="artisan api:docs" />
-      <command text="artisan sqlite:refresh" />
-      <command text="composer require &quot;bosnadev/repositories: 0.*&quot;" />
-      <command text="artisan sqlite:refresh" />
+      <command text="gulp watch" />
       <command text="artisan serve" />
-      <command text="artisan sqlite:refresh" />
-      <command text="artisan api:docs" />
-      <command text="artisan sqlite:refresh" />
       <command text="artisan tinker " />
-      <command text="artisan sqlite:refresh" />
-      <command text="artisan" />
-      <command text="composer update" />
-      <command text="composer require prettus/l5-repository" />
+      <command text="artisan make:middleware CORS" />
       <command text="artisan serve" />
-      <command text="composer update" />
-      <command text="npm install jwt-client" />
-      <command text="npm install --global gulp" />
+      <command text="gulp watch" />
       <command text="artisan serve" />
+      <command text="gulp browserify" />
+      <command text="gulp watch" />
       <command text="artisan api:routes" />
-      <command text="artisan sqlite:refresh" />
       <command text="artisan serve" />
-      <command text="artisan sqlite:refresh" />
+      <command text="npm install gulp-ftp" />
+      <command text="npm install gulp-ftp --save" />
+      <command text="npm install" />
       <command text="artisan serve" />
+      <command text="composer install" />
+      <command text="artisan serve" />
+      <command text="artisan make:middleware CORS" />
+      <command text="composer require neomerx/cors-illuminate" />
+      <command text="php artisan vendor:publish --provider=&quot;Neomerx\CorsIlluminate\Providers\LaravelServiceProvider&quot;" />
+      <command text="artisan vendor:publish --provider=&quot;Neomerx\CorsIlluminate\Providers\LaravelServiceProvider&quot;" />
+      <command text="artisan cache:clear " />
+      <command text="php artisan vendor:publish --provider=&quot;Neomerx\CorsIlluminate\Providers\LaravelServiceProvider&quot;" />
+      <command text="artisan serve" />
+      <command text="artisan tinker " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -211,57 +499,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/DocController.php" />
-        <option value="$PROJECT_DIR$/app/Api/Utils/Markdown/HeaderIntoLinkHandler.php" />
-        <option value="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Title.php" />
-        <option value="$PROJECT_DIR$/vendor/dingo/blueprint/src/Blueprint.php" />
-        <option value="$PROJECT_DIR$/vendor/dingo/blueprint/src/Action.php" />
-        <option value="$PROJECT_DIR$/vendor/dingo/blueprint/src/Annotation/Example.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
-        <option value="$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Provider/Image.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a72702e4-5288-4414-8ba2-e36d7e9da13a/console.sql" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserShowRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShowRequest.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/resources/assets/js/app.coffee" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/app/File.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserStoreRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileStoreRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Factory.php" />
-        <option value="$PROJECT_DIR$/vendor/dingo/api/src/Auth/Auth.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/test.php" />
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/app/Api/Repositories/FileRepository.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Contact.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/UserDestroyRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/UserListViewRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/UserShowRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/UserStoreRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/UserUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactUpdateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactStoreRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/dashboard.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/test.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/utils/FileWebApiUtils.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/utils/FileHelpers.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/index.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/components/FileBrowser.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/stores/FileStorage.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/dispatcher/FileAppDispatcher.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/constants/FileConstants.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/constants/ApiConstants.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/utils/Api.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/constants/LoginConstants.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/utils/Api.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Dashboard.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/App.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/AuthenticatedApp.jsx" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Signup.jsx" />
+        <option value="$PROJECT_DIR$/../Vagrantfile" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Login.jsx" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js" />
         <option value="$PROJECT_DIR$/app/Api/Http/Controllers/ContactController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/CalendarEventController.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Users/UserDestroyRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Share.php" />
-        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Http/Requests/AuthRequest.php" />
+        <option value="$PROJECT_DIR$/config/jwt.php" />
+        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Api/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/ShareRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php" />
-        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/ShareController.php" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/config/cors.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/CORS.php" />
+        <option value="$PROJECT_DIR$/config/cors-illuminate.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/resources/assets/js/Api.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/components/FileList.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/components/File.js" />
+        <option value="$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js" />
+        <option value="$PROJECT_DIR$/app/Directory.php" />
+        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
+        <option value="$PROJECT_DIR$/app/File.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php" />
+        <option value="$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php" />
       </list>
     </option>
   </component>
@@ -272,6 +560,23 @@
     <gulpfiles>
       <GulpfileState>
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <task-name>browserify</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>sass</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>tdd</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>watch</task-name>
+          </GulpTaskState>
+        </tasks>
       </GulpfileState>
     </gulpfiles>
   </component>
@@ -341,8 +646,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -389,275 +694,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="seeding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fixtures" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="id_1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coffee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -690,54 +727,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Transformers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -760,152 +749,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Response" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Format" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Contacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -940,23 +783,27 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/seeding/fixtures/file.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.21841332" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
+    <property name="nodejs_interpreter_path" value="C:\Program Files\nodejs\node" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="H:\Dropbox\Projet\pre-tpi\cloud\src\node_modules\gulp" />
+    <property name="js.buildTools.gulp.node_interpreter" value="H:\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Dropbox\Projet\pre-tpi\cloud\src\resources\assets\js\file_browser\utils" />
+      <recent name="C:\Users\Thomas\Dropbox\Projet\pre-tpi\cloud\src\resources\assets\js\file_browser" />
+      <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Http\Requests\Files" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Dropbox\Projet\pre-tpi\cloud\src\resources\assets\js\constants" />
+      <recent name="H:\Dropbox\Projet\pre-tpi\cloud\src\resources\assets\js\utils" />
+      <recent name="C:\Users\Thomas\Dropbox\Projet\pre-tpi\cloud\src\resources\assets\js" />
       <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src" />
       <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src\storage\seeding\fixtures" />
-      <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Http\Requests" />
-      <recent name="H:\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Providers" />
-      <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Http\Controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Http\Requests\Contacts" />
-      <recent name="C:\Users\thomas.ricci\Dropbox\Projet\pre-tpi\cloud\src\app\Api\Http\Requests\Files" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -2642,8 +2489,13 @@
       <created>1457083017948</created>
       <option name="number" value="Default" />
       <updated>1457083017948</updated>
+      <workItem from="1460142802102" duration="510000" />
+      <workItem from="1460143322022" duration="1709000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2219000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2656,29 +2508,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.38648364" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" x="480" y="0" width="960" height="1040" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40760297" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1703125" sideWeight="0.49630412" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27604166" sideWeight="0.36466774" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27604166" sideWeight="0.6353322" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33854166" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458334" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1703125" sideWeight="0.5036959" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.330076" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" x="226" y="122" width="1084" height="867" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51403064" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22395833" sideWeight="0.5038002" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.49166667" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="327" y="173" width="1266" height="628" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23018458" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2694,404 +2546,403 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Provider/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02247191">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Users/UserUpdateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6741573">
-          <caret line="31" column="107" selection-start-line="31" selection-start-column="107" selection-end-line="31" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06528836">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Routing/UrlGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02247191">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Http/Response/Factory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47191012">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Users/UserStoreRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22883295">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileBrowser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Files/FileStoreRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15686275">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/BelongsToMany.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Relations/Relation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Auth/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.46154">
-          <caret line="141" column="20" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/File/UploadedFile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34266517">
-          <caret line="198" column="20" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-foundation/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34266517">
-          <caret line="715" column="20" selection-start-line="715" selection-start-column="20" selection-end-line="715" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/curl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34911242">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Repositories/FileRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="173" column="10" selection-start-line="173" selection-start-column="10" selection-end-line="173" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Routing/Helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34266517">
-          <caret line="166" column="23" selection-start-line="166" selection-start-column="23" selection-end-line="166" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/File.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Calendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17510" column="107" selection-start-line="17510" selection-start-column="107" selection-end-line="17510" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34256056">
-          <caret line="404" column="13" selection-start-line="404" selection-start-column="13" selection-end-line="404" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51903117">
-          <caret line="354" column="41" selection-start-line="354" selection-start-column="41" selection-end-line="354" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/ApiTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Response/Format/Json.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2156863">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactDestroyRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactListViewRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactShowRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactUpdateRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="84" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Contacts/ContactStoreRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/Exception/NotFoundHttpException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39215687">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80091536">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.344828">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding>
-            <element signature="e#131#179#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Users/UserDestroyRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.793103">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#47#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Exception/ResourceException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13729978">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Exception/StoreResourceFailedException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.091533184">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.655172">
-          <caret line="15" column="100" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/fzaninotto/faker/src/Faker/Generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33258426">
-          <caret line="155" column="26" selection-start-line="155" selection-start-column="18" selection-end-line="155" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33595505">
-          <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.724138">
-          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.724138">
-          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="154" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Share.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4482758">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13483146">
-          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.896551">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.48276">
-          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.413794">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.344828">
-          <caret line="145" column="18" selection-start-line="145" selection-start-column="18" selection-end-line="145" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/RefreshTokenRequest.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15730338">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="27" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Requests/Files/FileShareRequest.php">
+    <entry file="file://$PROJECT_DIR$/app/Directory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.586207">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/ShareController.php">
+    <entry file="file://$PROJECT_DIR$/app/File.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76404494">
-          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/stores/FileStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding>
-            <element signature="e#44#58#0#PHP" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/File.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileBrowser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="197" column="31" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/stores/FileStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/File.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="10" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Repositories/FileRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Repositories/FileRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Providers/ApiServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45511812">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/neomerx/cors-illuminate/config/cors-illuminate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/neomerx/cors-illuminate/src/Providers/LaravelServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24094488">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45511812">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.076923">
+          <caret line="165" column="63" selection-start-line="165" selection-start-column="63" selection-end-line="165" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.053543307">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/main/services/AuthService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28290468">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/main/actions/LoginActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15431164">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42437592">
+          <caret line="17" column="304" selection-start-line="17" selection-start-column="304" selection-end-line="17" selection-end-column="304" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/Api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5978593">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/stores/FileStorage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/File.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/actions/FileActionCreator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/components/FileBrowser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/file_browser/services/FileService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/DocController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+          <folding>
+            <element signature="e#44#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <marker date="1460467812000" expanded="true" signature="849:857" placeholder=" Authenticates the user with his email, and password. Returns a Json Web Token ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Directory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_12_104938_initial_migration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385">
+          <caret line="84" column="51" selection-start-line="84" selection-start-column="51" selection-end-line="84" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/File.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.807693">
+          <caret line="48" column="70" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Http/Controllers/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24156305">
+          <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>

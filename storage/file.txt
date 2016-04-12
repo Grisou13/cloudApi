@@ -1,1 +1,1 @@
-log
+This a text file :D

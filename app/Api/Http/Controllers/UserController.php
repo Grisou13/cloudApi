@@ -48,6 +48,7 @@ class UserController extends Controller
     }
 
     /**
+     * <a name="user-list"></a>
      * Get the list of all users.
      *
      * This method may not be accessible to everyone. It is considered private.
@@ -59,17 +60,16 @@ class UserController extends Controller
      * --data "{}"
      * ```
      *
-     * @param UserListViewRequest $request
-     * @return \Illuminate\Http\Response
      * @Get("/")
      * @Versions({"v1"})
      * @Request({})
      * @Response(200,body={"status": "ok" ,"payload" : "....SOmeData"})
-     * @Transaction({
-     *      @Title("Errors"),
-     *      @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"}),
-     *      @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"}),
-     * })
+     *
+     * + Repsonse Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     * @param UserListViewRequest $request
+     * @return \Illuminate\Http\Response
      */
     public function index(UserListViewRequest $request)
     {
@@ -109,6 +109,21 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
+     * + Example
+     * ```
+     * curl -X GET http://ricci.cpnv-es.ch/api/v1/users/{$id} \\
+     * --header "Authorization: bearer <[access token](#auth)>
+     * ```
+     *
+     * @Get("/{$id}")
+     * @Versions({"v1"})
+     * @Request({})
+     * @Response(200,body={"status": "ok" ,"payload" : "....SOmeData"})
+     *
+     * + Repsonse Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -121,6 +136,22 @@ class UserController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * + Example
+     * ```
+     * curl -X PATCH http://ricci.cpnv-es.ch/api/v1/users/{$id} \\
+     * --header "Authorization: bearer <[access token](#auth)>
+     * --data "{"..some data"}"
+     * ```
+     *
+     * @Patch("/{$id}")
+     * @Versions({"v1"})
+     * @Request({})
+     * @Response(200,body={"status": "ok" ,"payload" : "....SOmeData"})
+     *
+     * + Repsonse Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
      *
      * @param UserUpdateRequest|Request $request
      * @param \App\User $user

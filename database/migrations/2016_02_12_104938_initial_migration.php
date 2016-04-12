@@ -13,10 +13,10 @@ class InitialMigration extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('calendar_events', function (Blueprint $table) {
             //ids...
             $table->increments('id');
-            $table->uuid("uid")->default(\Webpatser\Uuid\Uuid::generate());
+            $table->uuid("uid");
             //$table->integer("owner_id")->unsigned();
             $table->integer("calendar_id")->unsigned();
             //table data
@@ -32,7 +32,7 @@ class InitialMigration extends Migration
             $table->softDeletes();
             //foreign key stuff
             //$table->foreign("owner_id")->references("id")->on("users");
-            $table->foreign("calendar_id")->references("id")->on("calendar");
+            $table->foreign("calendar_id")->references("id")->on("calendars");
         });
         Schema::create('calendars', function (Blueprint $table) {
             //ids...
@@ -68,9 +68,30 @@ class InitialMigration extends Migration
             //ids...
             $table->increments('id');
             $table->integer("owner_id")->unsigned();
+            $table->integer("directory_id")->unsigned();
             //table data
             $table->string("storage")->default("local");
-            $table->string("filepath");
+            $table->string("filename");
+            //$table->string("storage_path");
+            //times...
+            $table->timestamps();
+            $table->softDeletes();
+            //foreign key stuff
+            $table->foreign("owner_id")->references("id")->on("users");
+            $table->foreign("directory_id")->references("id")->on("directories");
+        });
+        Schema::create("directories_files",function(Blueprint $table){
+            $table->integer("directory_id")->unsigned();
+            $table->integer("file_id")->unsigned();
+            $table->foreign("file_id")->references("id")->on("files");
+            $table->foreign("directory_id")->references("id")->on("directories");
+        });
+        Schema::create('directories', function (Blueprint $table) {
+            //ids...
+            $table->increments('id');
+            $table->integer("owner_id")->unsigned();
+            //table data
+            $table->text("path");
             $table->string("storage_path");
             //times...
             $table->timestamps();
@@ -105,6 +126,7 @@ class InitialMigration extends Migration
             //foreign key stuff
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade")->onUpdate("cascade");
             $table->foreign("share_id")->references("id")->on("shares")->onDelete("cascade")->onUpdate("cascade");
+            $table->foreign("role_id")->references("id")->on("roles");
         });
 
     }

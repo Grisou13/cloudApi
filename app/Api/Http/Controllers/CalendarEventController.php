@@ -2,6 +2,10 @@
 
 namespace App\Api\Http\Controllers;
 
+use App\Calendar;
+use App\CalendarEvent;
+use Dingo\Api\Contract\Http\Request;
+
 class CalendarEventController extends Controller
 {
 
@@ -12,18 +16,16 @@ class CalendarEventController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('api.auth',['only'=>[
-          'index'
-          ]]);
+        $this->middleware('api.auth');
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Calendar $calendar)
     {
-        //
+        return $calendar->events()->getResults();
     }
 
     /**
@@ -31,10 +33,10 @@ class CalendarEventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -42,9 +44,13 @@ class CalendarEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Calendar $calendar)
     {
-        //
+        $payload = $request->get(["summary","description","location","start_date","end_date"]);
+        $event = new CalendarEvent($payload);
+        $event->calendar()->associate($calendar);
+        $event->save();
+        return $this->response()->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.calendar.event.show",$event),$event);
     }
 
     /**
@@ -53,9 +59,9 @@ class CalendarEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CalendarEvent $event)
     {
-        //
+        return $event;
     }
 
     /**
@@ -64,10 +70,10 @@ class CalendarEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -76,9 +82,12 @@ class CalendarEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CalendarEvent $event)
     {
-        //
+        $payload = $request->get(["summary","description","location","start_date","end_date"]);
+        $event->update(array_merge($event->toArray(),$payload));
+        $event->save();
+        return $this->response()->accepted(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.calendar.event.show",$event),$event);
     }
 
     /**
@@ -87,8 +96,9 @@ class CalendarEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CalendarEvent $event)
     {
-        //
+        $event->delete();
+        return $this->response()->noContent();
     }
 }

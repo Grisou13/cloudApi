@@ -14,9 +14,9 @@
 use App\Api\Repositories\FileRepository;
 use App\Calendar;
 use App\User;
-use App\Event;
+use App\CalendarEvent;
 
-$factory->define(User::class, function (Faker\Generator $faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'username' => $faker->name,
         'email' => $faker->email,
@@ -24,48 +24,63 @@ $factory->define(User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\Directory::class,function(Faker\Generator $faker){
+    return [
+        "app_path"=>"/".join("/",$faker->words($faker->randomNumber(1))),
+        "storage_path"=>function($dir){
+            return storage_path("app/user_data/user_".$dir["owner_id"]."/".$dir["app_path"]);
+        }
+    ];
+});
 /*$factory->defineAs(User::class,"admin",function(Faker\Generator $faker) use ($factory){
     $user = $factory->raw(User::class);
     return array_merge($user,["id"=>"1"]);
 });*/
-$factory->define(Event::class,function(Faker\Generator $faker){
+$factory->define(App\CalendarEvent::class,function(Faker\Generator $faker){
     return [
+        "uid"=>\Webpatser\Uuid\Uuid::generate(),
         "summary"=>$faker->sentence,
+        "description"=>$faker->paragraph(2),
         "location"=>$faker->address,
         "start_date"=>$faker->dateTimeBetween("-20 days","-1 hour"),
-        "end_date"=>$faker->dateTimeBetween("now","+20 days")
+        "end_date"=>$faker->dateTimeBetween("now","+20 days"),
+        //"calendar_id"=>factory(Calendar::class)->create()->id,
+        "status"=>"ACCEPTED"
     ];
 });
 $factory->define(App\File::class,function(Faker\Generator $faker){
     $filename = $faker->image(storage_path("tmp/"),$fullPath=false);
+    $path = "/{$faker->word}/".basename($filename);
+
     return [
-        "filepath"=>"/{$faker->word}/".basename($filename),
+        "filename"=>$path,
         "owner_id"=>factory(User::class)->create()->id,
-        "storage_path"=>function($file){
-            $user = User::find($file["owner_id"]);
-            $repo = FileRepository::instance($user);
-            return $repo->buildPath($file["filepath"]);
-        }
+
     ];
 });
-
+$factory->define(App\Calendar::class,function(Faker\Generator $faker) {
+    return [
+        "title"=>$faker->words(5),
+        "owner_id"=>factory(User::class)->create()->id
+    ];
+});
 $factory->define(App\Contact::class,function(Faker\Generator $faker){
     return [
         "name"=>$faker->name,
         "photo"=>$faker->imageUrl(),
-        "emails"=>function(Faker\Generator $faker){
+        "emails"=>function() use ($faker){
             $emails = new \StdClass();
             $emails->work = $faker->companyEmail;
             $emails->private = $faker->email;
             return $emails;
         },
-        "addresses"=>function(Faker\Generator $faker){
+        "addresses"=>function() use ($faker){
             $addr = new \StdClass();
             $addr->work = $faker->address;
             $addr->private = $faker->address;
             return $addr;
         },
-        "phoneNumbers"=>function(Faker\Generator $faker){
+        "phoneNumbers"=>function() use ($faker){
             $phone = new \StdClass();
             $phone->work = $faker->phoneNumber;
             $phone->private = $faker->phoneNumber;

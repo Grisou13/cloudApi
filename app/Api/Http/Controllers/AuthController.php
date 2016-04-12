@@ -30,14 +30,32 @@ class AuthController extends Controller
     }
 
     /**
-     * Authenticates the user with his email, and password. Returns a Json Web Token
+     * <a name="auth"></a>
+     * Authenticates the user with his email or username, and password. Returns a Json Web Token and it's validity delays
+     *
+     * + Example
+     * ```
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token \\
+     * --data "{'login':[username or email],'password':[password]}"
+     * ```
+     *
+     * @Post("/auth/jwt/get_token")
+     * @Versions({"v1"})
+     * @Request({"login":"username or email":"password":"password..."})
+     * @Response(200,body={"status": "ok" ,"payload" : {"token":"[jwt token]","refresh_ttl":"int value of refresh time for the token","ttl":"time in which the token is valid"}})
+     *
+     * + Response Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     *
      * @param AuthRequest $request
      * @return array
      */
     public function jwtAuth(AuthRequest $request)
     {
-
-        $credentials = $request->only('email', 'password');
+        $field = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $request->merge([$field => $request->input('login')]);
+        $credentials = $request->only($field, 'password');
 
         try {
             // verify the credentials and create a token for the user
@@ -48,13 +66,41 @@ class AuthController extends Controller
             // something went wrong
             throw new HttpException('could not create token');
         }
-
+        //$user = JWTAuth::toUser($token);
+        //$payload = \JWTFactory::make(["username"=>$user->username]);
+        //$token = JWTAuth::encode($payload);
         // if no errors are encountered we can return a JWT
         return $this->tokenResponse($token);
     }
 
     /**
-     * Refreshes a token
+     * <a name="refresh_auth"></a>
+     * Refreshes a token from either the headers, or a query parameter
+     * + Example
+     * ```
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token \\
+     * --header "Authorization: bearer <[access token](#auth)>
+     * ```
+     * OR
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token \\
+     * --data "{'token':"<[access token](#auth)>"}"
+     * ```
+     * OR
+     *
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token?token="<[access token](#auth)>"
+     * ```
+     *
+     * @Post("/auth/jwt/refresh_token")
+     * @Versions({"v1"})
+     * @Request({"token":"[access token](#auth)"})
+     * @Request({}, headers={"Authorization": "Barear <[access token](#auth)>"})
+     * @Response(200,body={"status": "ok" ,"payload" : {"token":"[jwt token]","refresh_ttl":"int value of refresh time for the token","ttl":"time in which the token is valid"}})
+     * @Parameter("token", description="The jwt delivered by (#auth)."),
+     *
+     * + Response Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     *
      * @param RefreshTokenRequest $request
      * @return array
      */
@@ -74,6 +120,32 @@ class AuthController extends Controller
     }
 
     /**
+     * <a name="auth_logout"></a>
+     * Invalidates a token, making it unusable again!!
+     * + Example
+     * ```
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token \\
+     * --header "Authorization: bearer <[access token](#auth)>
+     * ```
+     * OR
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token \\
+     * --data "{'token':"<[access token](#auth)>"}"
+     * ```
+     * OR
+     *
+     * curl -X POST http://ricci.cpnv-es.ch/api/auth/jwt_get_token?token="<[access token](#auth)>"
+     * ```
+     *
+     * @Post("/auth/jwt/refresh_token")
+     * @Versions({"v1"})
+     * @Request({"token":"[access token](#auth)"})
+     * @Request({}, headers={"Authorization": "Barear <[access token](#auth)>"})
+     * @Response(200,body={"status": "ok" ,"payload" : {"token":"[jwt token]","refresh_ttl":"int value of refresh time for the token","ttl":"time in which the token is valid"}})
+     * @Parameter("token", description="The jwt delivered by (#auth)."),
+     *
+     * + Response Errors
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
      * @param LogoutTokenRequest|Request $request
      * @return \Dingo\Api\Http\Response
      */
@@ -96,7 +168,7 @@ class AuthController extends Controller
      */
     protected function tokenResponse($token)
     {
-        return ["token"=>$token,"ttl"=>Config::get("jwt.ttl"),"refresh_ttl"=>Config::get("jwt.refresh_ttl")];
+        return ["token"=>$token,"ttl"=>Config::get("jwt.ttl"),"refresh_ttl"=>Config::get("jwt.refresh_ttl"),"user_id"=>JWTAuth::toUser($token)->id];
     }
 
     public function getCurrentUser()

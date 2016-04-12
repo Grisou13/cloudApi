@@ -8,7 +8,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use App\User;
 use App\Calendar;
 use App\Contact;
-use App\Event;
+use App\CalendarEvent;
 use App\File;
 use App\Share;
 
@@ -24,7 +24,7 @@ use Bouncer;
 use Dingo\Api\Auth\Auth;
 use Dingo\Api\Auth\Provider\OAuth2;
 use DB;
-use App\ApiClient;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -33,6 +33,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+        Share::class => SharePolicy::class
 //        User::class => UserPolicy::class,
 //        Contact::class => ContactPolicy::class,
 //        File::class => FilePolicy::class,

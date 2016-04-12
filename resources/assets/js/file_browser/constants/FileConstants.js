@@ -1,0 +1,18 @@
+import {BASE_URL,API_VERSION} from '../../ApiConstants'
+const config = {
+  //EVENTS
+  RECEIVE_FOLDER_CONTENT: 'RECEIVE_FILES',
+  RECEIVE_FILE_CONTENT:"RECEIVE_FILE",
+
+  CHANGE_FOLDER_LOCATION: 'CHANGE_DIRECTORY',
+  CREATE_FOLDER:"ADD_DIRECTORY",
+  GOT_DIRECTORY_CONTENT:"DIRECTORY_CONTENT",
+
+  ROOT_DIR:"/",
+  GET_FILES:BASE_URL+"/"+API_VERSION+"/file",
+  UPLOAD_FILE:BASE_URL+"/"+API_VERSION+"/file",
+  GET_TREE:BASE_URL+"/"+API_VERSION+"/tree",
+  ADD_DIR:BASE_URL+"/"+API_VERSION+"/add_directory"
+};
+export default config
+module.exports = config

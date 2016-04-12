@@ -15,6 +15,9 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        //\Neomerx\CorsIlluminate\CorsMiddleware::class,
+        //\Barryvdh\Cors\HandleCors::class,
+        //\Barryvdh\Cors\HandlePreflight::class
         //\LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class,
     ];
 
@@ -55,5 +58,6 @@ class Kernel extends HttpKernel
         'oauth-client' => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
         'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
         'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
+        //'cors' => \App\Http\Middleware\CORS::class
     ];
 }

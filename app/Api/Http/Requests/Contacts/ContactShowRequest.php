@@ -3,6 +3,7 @@
 namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
+use Silber\Bouncer\Bouncer;
 
 class ContactShowRequest extends Request
 {
@@ -11,11 +12,11 @@ class ContactShowRequest extends Request
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(Bouncer $gate)
     {
-        $user = app(Auth::class)->user();
-        if(Bouncer::is($user)->a("admin") ||
-            $this->get("user")->id == $user->id)
+        if($this->route("contact")->owner()->getResults()->id == $this->user()->id)
+            return true;
+        if($gate->allows("view-others-contacts",$this->user()))
             return true;
         return false;
     }

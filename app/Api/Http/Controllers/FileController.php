@@ -6,6 +6,7 @@ namespace App\Api\Http\Controllers;
 use App\Api\Http\Requests\Files\FileShowRequest;
 use App\Api\Http\Requests\Files\FileStoreRequest;
 use App\Api\Repositories\FileRepository;
+use App\Directory;
 use App\File;
 use App\Share;
 use Bouncer;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Str;
 use League\Flysystem\Util;
 use Storage;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
@@ -33,7 +35,6 @@ class FileController extends Controller
     public function __construct(FileRepository $repo)
     {
         $this->middleware('api.auth');
-        //$repo->setUser($this->user());
         $this->repository = $repo;
     }
 
@@ -49,7 +50,7 @@ class FileController extends Controller
         if($request->has("user") && Bouncer::allows("view-others-files",$user))//admins can see others people files
             return File::with("shares")->whereHas("owner",function($query) use ($request){
                 $user = $request->get("user");
-                $query-where("id","=",$user);
+                $query->where("id","=",$user);
             })->get();
         //echo $user;
         return $user->files()->get();
@@ -82,24 +83,24 @@ class FileController extends Controller
             //var_dump($this->user());
 
             $filepath = $request->input("filepath");
-
+            $pathinfo = Util::pathinfo($filepath);
             $user = $this->auth()->user();
             //create the modal
             $file = new File();
             $file->owner()->associate($user);
-
-            $file->filepath = $filepath;
-            $file->storage_path=storage_path($this->repository->buildPath($file->full_path));
+            $dir = Directory::where("path",$pathinfo["dirname"])->first();
+            if(!$dir->count())
+                throw new BadRequestHttpException("directory does not exist");
+            $file->filename = $pathinfo["basename"];
+            $file->folder()->associate($dir);
 
             $file->saveOrFail();
             //move the uplaoded file
             $f = $request->file("upload");
-            $directory = storage_path($this->repository->buildPath($file->folder));
+            $directory = dirname($file->storage_path);
             if($f->move($directory,$file->filename))
             {
-                //Storage::drive()->copy($f->getPath(),$file->full_path);
                 return $this->response->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.file.show",$file),$file);
-                return ["file"=>$file];
             }
             else
             {
@@ -112,6 +113,11 @@ class FileController extends Controller
 
 
     }
+
+    /**
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function copy(Request $request)
     {
         $from = $this->repository->buildPath($request->get("from"));
@@ -119,6 +125,11 @@ class FileController extends Controller
         $this->repository->copy($from,$to);
         return $this->response()->accepted();
     }
+
+    /**
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function move(Request $request)
     {
         $from = $this->repository->buildPath($request->get("from"));
@@ -126,6 +137,11 @@ class FileController extends Controller
         $this->repository->move($from,$to);
         return $this->response()->accepted();
     }
+
+    /**
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function addFolder(Request $request)
     {
         $path = $request->get("path");
@@ -133,6 +149,11 @@ class FileController extends Controller
             return $this->response->accepted();
         throw new HttpException("could not create folder");
     }
+
+    /**
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function deleteFolder(Request $request)
     {
         $path = $request->get("path");
@@ -140,17 +161,58 @@ class FileController extends Controller
             return $this->response->accepted();
         throw new HttpException("could not delete folder");
     }
-    public function share(Request $request,File $file,User $user)
+
+    /**
+     * @param Request $request
+     * @param File $file
+     * @return mixed
+     */
+    public function share(Request $request,File $file)
     {
-        $file->shares()->create(["participants"=>[$user]]);
-        dd($file);
-        return $this->response->created();
+        return $this->api->with(["resource"=>File::class,"id"=>$file->id,"user"=>$request->get("users")])->post("/api/v1/share");
     }
+
+    /**
+     * @param Request $request
+     * @param Directory $dir
+     * @return mixed
+     */
+    public function shareFolder(Request $request,Directory $dir)
+    {
+        return $this->api->with(["resource"=>Directory::class,"id"=>$dir->id,"user"=>$request->get("users")])->post("share");
+    }
+
+    /**
+     * @param Request $request
+     * @return array
+     */
     public function tree(Request $request)
     {
+        //dd($request->get("path"));
         $path = $this->repository->buildPath($request->get("path"));
-        $storage = Storage::disk(Storage::getDefaultDriver());
-        return array_merge($this->repository->directories($path),$this->repository->files($path));
+        $user = $this->user();
+        /*foreach($this->repository->directories($path) as $dir){
+            $dirs[]=[
+                "type"=>"directory",
+                "filename"=>$dir
+            ];
+        }*/
+        $dirs = Directory::where("path",$path)->get();
+        $files = File::where("folder",$path)->get();
+        /*$shares = Share::with("owner")->whereHas("owner",function($query) use ($user){return $query->where("owner_id",'=',$user->id);});
+        $shares = $shares->groupBy("shareable_type");
+        foreach($shares as $share){
+            switch(get_class($share->shareable))
+            {
+                case "App\\Directory":
+                    $dirs->push(array_merge($share->shareable->toArray(),["type"=>"shareable_directory"]));
+                    break;
+                /*case "App\\File":
+                    $files->push(array_merge($share->shareable,["type"=>"shareable_file"]));
+                    break;*//*
+            }
+        }*/
+        return array_merge($dirs->toArray(),$files->toArray());
     }
     /**
      * Display the specified resource.
@@ -198,7 +260,7 @@ class FileController extends Controller
      */
     public function destroy(File $file)
     {
-
+        $file->delete();
         $this->repository->delete($file->storage_path);
     }
 }

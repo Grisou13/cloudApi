@@ -11,7 +11,7 @@ class AuthRequest extends Request
     public function authorize()
     {
 
-        return true;//everybody can authenticate....
+        return true;//everybody can authenticate.
 
     }
 
@@ -23,7 +23,7 @@ class AuthRequest extends Request
     public function rules()
     {
         return [
-            "email"=>"required",
+            "login"=>"required",
             "password"=>"required"
         ];
     }

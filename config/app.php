@@ -164,7 +164,6 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
-
         /*LucaDegasperi\OAuth2Server\Storage\FluentStorageServiceProvider::class,
         LucaDegasperi\OAuth2Server\OAuth2ServerServiceProvider::class,*/
 

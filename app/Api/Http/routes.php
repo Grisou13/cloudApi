@@ -14,8 +14,6 @@
  * @var Dingo\Api\Routing\Router $api
  */
 
-//$api = app('Dingo\Api\Routing\Router');
-//$api->group(['version'=>'v1','namespace'=>"App\\Api\\Http\\Controllers"], function ($api) {
     /*
      * Global info
      * Api version
@@ -52,10 +50,10 @@
         //$api->get("user/{user}/shares",["uses"=>"UserController@shares"]);
         $api->resource("share","ShareController");
         $api->resource("file","FileController");
-        $api->post("file/{file}/share",["uses"=>"FileController@share"]);
+        $api->get("/tree",["as"=>"api.v1.file.tree","uses"=>"FileController@tree"]);
+        $api->post("/file/{file}/share",["as"=>"api.v1.file.share","uses"=>"FileController@share"]);
         $api->resource("calendar","CalendarController");
         $api->resource("calendar.event","CalendarEventController");
         $api->resource("contact","ContactController");
     });
 
-//});

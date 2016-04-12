@@ -50,6 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Calendar::class,"owner_id");
     }
+    public function shares()
+    {
+        return $this->hasMany(Share::class,"owner_id");
+    }
 
 
 }

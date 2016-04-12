@@ -13,7 +13,7 @@ class ContactDestroyRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return $this->route("contact")->owner()->getResults()->id == $this->user()->id;
     }
 
     /**

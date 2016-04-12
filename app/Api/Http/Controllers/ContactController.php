@@ -90,7 +90,7 @@ class ContactController extends Controller
     public function update(ContactUpdateRequest $request, Contact $contact)
     {
         $payload = $request->only(["name","photo","emails","addresses","pnoneNumbers","company","job_title"]);
-        $contact->update($payload);
+        $contact->update(array_merge($contact->toArray(),$payload));
         return $this->response->accepted(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.contact.show",$contact),$contact);
     }
 

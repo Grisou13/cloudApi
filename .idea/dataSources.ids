@@ -14,6 +14,22 @@
       <primary-key columns="id"/>
       <index name="abilities_name_entity_id_entity_type_unique" unique="true" columns="name,entity_id,entity_type"/>
     </table>
+    <table name="calendar_events" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="uid" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="J2MxZGRmMzkwLWYxODUtMTFlNS1iN2M3LWY3OGI2MDM4ZTQyZic="/>
+      <column name="calendar_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="summary" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="location" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="start_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="end_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0FDQ0VQVEVEJw=="/>
+      <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="deleted_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_calendar_events_1" columns="calendar_id" ref-table="calendars" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
     <table name="calendars" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
@@ -40,28 +56,21 @@
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_contacts_1" columns="owner_id" ref-table="users" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
     </table>
-    <table name="events" schema="" catalog="" type="TABLE">
+    <table name="directories" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="uid" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="J2YyNjVkYmMwLWVjNDMtMTFlNS04MmI0LWQzYWU3OWM4OTkwMic="/>
-      <column name="calendar_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="summary" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="location" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="start_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="end_date" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="status" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="J0FDQ0VQVEVEJw=="/>
+      <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="path" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="deleted_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
-      <foreign-key name="#FAKE_events_1" columns="calendar_id" ref-table="calendar" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_directories_1" columns="owner_id" ref-table="users" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
     </table>
     <table name="files" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="owner_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="folder" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="storage" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12" def="J2xvY2FsJw=="/>
-      <column name="filename" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="filepath" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="storage_path" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="true" jdbcType="12"/>
@@ -112,7 +121,7 @@
     <table name="share_links" schema="" catalog="" type="TABLE">
       <column name="url" sqlType="TEXT" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="token" sqlType="VARCHAR" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="expires" sqlType="TIME" precision="0" scale="-1" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="expires" sqlType="TIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="share_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <foreign-key name="#FAKE_share_links_1" columns="share_id" ref-table="shares" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
@@ -154,7 +163,6 @@
       <index name="user_roles_role_id_index" unique="true" columns="role_id"/>
     </table>
     <table name="user_share" schema="" catalog="" type="TABLE">
-      <column name="access_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="user_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="share_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <foreign-key name="#FAKE_user_share_1" columns="share_id" ref-table="shares" ref-schema="" ref-catalog="" ref-columns="id" update-rule="0" delete-rule="0" deferrability="1"/>

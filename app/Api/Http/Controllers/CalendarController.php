@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Api\Http\Controllers;
+use App\Calendar;
+use Dingo\Api\Contract\Http\Request;
 
 /**
  * Calendar resource repsientation
@@ -17,9 +19,7 @@ class CalendarController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('api.auth',['only'=>[
-          'index'
-          ]]);
+        $this->middleware('api.auth');
     }
     /**
      * Display a listing of the resource.
@@ -27,9 +27,9 @@ class CalendarController extends Controller
      * @return \Illuminate\Http\Response
      *
     */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return $request->user()->calendars();
     }
 
     /**
@@ -50,7 +50,11 @@ class CalendarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $payload = $request->get("title");
+        $calendar = new Calendar($payload);
+        $calendar->owner()->associate($this->user());
+        $calendar->save();
+        return $this->response()->created(app('Dingo\Api\Routing\UrlGenerator')->version("v1")->route("api.v1.calendar.show",$calendar),$calendar);
     }
 
     /**

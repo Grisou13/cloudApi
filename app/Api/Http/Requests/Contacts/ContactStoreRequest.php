@@ -20,13 +20,9 @@ class ContactStoreRequest extends Request
      *
      * @return bool
      */
-    public function authorize(Auth $auth)
+    public function authorize()
     {
-
-        if(Bouncer::allow("create-users",$auth->user())){
-            return true;
-        }
-        return false;
+        return true; //everybody can create a contact
     }
 
     /**

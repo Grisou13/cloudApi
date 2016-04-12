@@ -23,10 +23,10 @@ class Contact extends Model
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
     public function shares()
     {
-    	return $this->morphMany("App\\Share","shareable");
+    	return $this->morphMany(Share::class,"shareable");
     }
     public function owner()
     {
-        return $this->belongsTo("App\\Users","id","owner_id");
+        return $this->belongsTo(User::class,"id","owner_id");
     }
 }

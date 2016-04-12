@@ -3,6 +3,7 @@
 namespace App\Api\Http\Requests\Contacts;
 
 use App\Api\Http\Requests\Request;
+use Silber\Bouncer\Bouncer;
 
 class ContactUpdateRequest extends Request
 {
@@ -11,14 +12,11 @@ class ContactUpdateRequest extends Request
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(Bouncer $gate)
     {
-        return true;
-        /*$user = app("Dingo\\Api\\Auth\\Auth")->user();
-        if(Bouncer::allow("update-user",$user) || $this->route("user")->id == $user->id){
+        if($gate->allows("update-others-contacts",$this->user()) || $this->route("contact")->owner()->getResults()->id == $this->user()->id )
             return true;
-        }
-        return false;*/
+        return false;
     }
 
     /**

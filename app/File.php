@@ -18,10 +18,11 @@ class File extends Model
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillable = ["filepath","storage_path"];
+    protected $fillable = ["filename"];
     //protected $attributes = ["full_path"];//add extra attributes to the model
-    protected $appends = ["full_path","folder","filename"];//add it to the json representation
-    protected $hidden = [/*"storage_path",*/"storage","filepath"];
+    protected $appends = ["type"/*"full_path","folder","filename"*/];//add it to the json representation
+    protected $hidden = [/*"storage_path","storage","filepath"*/];
+
 
     public function shares()
     {
@@ -31,9 +32,17 @@ class File extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function getFolderAttribute()
+    public function folder()
     {
-        return str_replace("\\","/",Util::pathinfo($this->attributes["filepath"])["dirname"]);
+        return $this->belongsTo(Directory::class);
+    }
+    public function getTypeAttribute()
+    {
+        return $this->attributes["type"]="file";
+    }
+    /*public function getFolderAttribute()
+    {
+        return str_replace("\\","/",Util::pathinfo($this->folder()->getResults()->app_path)["dirname"]);
     }
     public function getFilenameAttribute()
     {
@@ -43,5 +52,9 @@ class File extends Model
     {
         return $this->attributes["filepath"];
     }
+    public function setFilepathAttribuet($value)
+    {
+        return str_replace("\\","/",$value);
+    }*/
 
 }

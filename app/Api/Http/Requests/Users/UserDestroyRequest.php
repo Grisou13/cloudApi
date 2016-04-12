@@ -14,9 +14,9 @@ class UserDestroyRequest extends Request
      */
     public function authorize(Bouncer $gate)
     {
-        if($gate->is($this->user())->a("admin"))
+        if($gate->allows("delete-user",$this->user()))
             return true;
-        if($this->get("user")->id == $this->user()->id)
+        if($this->route("user")->id == $this->user()->id)
             return true;
         return false;
     }

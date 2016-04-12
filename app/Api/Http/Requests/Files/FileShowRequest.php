@@ -3,6 +3,7 @@
 namespace App\Api\Http\Requests\Files;
 
 use App\Api\Http\Requests\Request;
+use Silber\Bouncer\Bouncer;
 
 class FileShowRequest extends Request
 {
@@ -11,9 +12,13 @@ class FileShowRequest extends Request
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(Bouncer $gate)
     {
-        return true;
+        if($this->route("file")->owner()->getResults()->id == $this->user()->id)
+            return true;
+        if($gate->allows("view-others-files",$this->user()))
+            return true;
+        return false;
     }
 
     /**

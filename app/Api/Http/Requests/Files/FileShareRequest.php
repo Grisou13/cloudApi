@@ -20,8 +20,8 @@ class FileShareRequest extends Request
      */
     public function authorize()
     {
-        $file = $this->get("file");
-        return $file->owner() == $this->user();
+        $file = $this->route("file");
+        return $file->owner()->getResults() == $this->user();
     }
 
     /**
