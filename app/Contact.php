@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Contact extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,ResourceModel;
     protected $casts = [
         "emails"=>"object",
         "addresses"=>"object",
@@ -21,12 +21,8 @@ class Contact extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-    public function shares()
-    {
-    	return $this->morphMany(Share::class,"shareable");
-    }
     public function owner()
     {
-        return $this->belongsTo(User::class,"id","owner_id");
+        $this->belongsTo(User::class);
     }
 }

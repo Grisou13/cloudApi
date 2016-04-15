@@ -29,6 +29,13 @@ use Symfony\Component\HttpKernel\Exception\UnsupportedMediaTypeHttpException	;
 class Controller extends IllumincateController
 {
     use Helpers, AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    protected function linkTo()
+    {
+        $args = func_get_args();
+        $context = app('Dingo\Api\Routing\UrlGenerator')->version("v1");
+        $func= "route";
+        return call_user_func_array([$context,$func],$args);
+    }
     /*public function getAuthenticatedUser()
     {
         $user = false;

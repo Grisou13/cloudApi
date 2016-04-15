@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Webpatser\Uuid\Uuid;
 
+/**
+ * Class CalendarEvent
+ * @package App
+
+ */
 class CalendarEvent extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,ResourceModel;
 
     protected $fillable = ["summary","description","location","start_date","end_date","status"];
     /**
@@ -22,10 +27,6 @@ class CalendarEvent extends Model
      * Returns the owner of the event, which is the owner of the calendar
      * @return Model
      */
-    public function owner()
-    {
-        return $this->calendar()->owner();
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

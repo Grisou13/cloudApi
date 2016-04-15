@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 
 use App\Api\Repositories\FileRepository;
+use App\Directory;
 use Dingo\Api\Auth\Auth;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Queue\InteractsWithQueue;
@@ -26,9 +27,18 @@ class UserEventListener
      */
     public function handleUserCreated($user)
     {
-        $this->repository->setUser($user);//set the newly created user to
+
+        $dir = new \App\Directory();
+        $dir->path="/";
+        $dir->owner()->associate($user);
+
+        $dir->save();
+        $dir->parent()->associate($dir);//associate the parent to this directory, since it's the root
+        $dir->save();
+        $this->repository->makeDirectory($dir->path);
+        /*$this->repository->setUser($user);//set the newly created user to
         var_dump($this->repository);
-        $this->repository->createBaseDirectoryForUser();
+        $this->repository->createBaseDirectoryForUser();*/
     }
 
     /**

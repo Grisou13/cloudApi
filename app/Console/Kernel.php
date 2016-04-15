@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\Inspire::class,
-        Commands\DatabaseRefresh::class
+        Commands\DatabaseRefresh::class,
+        //Commands\Gulp::class
     ];
 
     /**

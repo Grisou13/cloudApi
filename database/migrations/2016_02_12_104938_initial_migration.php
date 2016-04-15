@@ -68,7 +68,7 @@ class InitialMigration extends Migration
             //ids...
             $table->increments('id');
             $table->integer("owner_id")->unsigned();
-            $table->integer("directory_id")->unsigned();
+            $table->integer("folder_id")->unsigned();
             //table data
             $table->string("storage")->default("local");
             $table->string("filename");
@@ -78,26 +78,28 @@ class InitialMigration extends Migration
             $table->softDeletes();
             //foreign key stuff
             $table->foreign("owner_id")->references("id")->on("users");
-            $table->foreign("directory_id")->references("id")->on("directories");
+            $table->foreign("folder_id")->references("id")->on("directories");
         });
-        Schema::create("directories_files",function(Blueprint $table){
+        /*Schema::create("directory_files",function(Blueprint $table){
             $table->integer("directory_id")->unsigned();
             $table->integer("file_id")->unsigned();
             $table->foreign("file_id")->references("id")->on("files");
             $table->foreign("directory_id")->references("id")->on("directories");
-        });
+        });*/
         Schema::create('directories', function (Blueprint $table) {
             //ids...
             $table->increments('id');
             $table->integer("owner_id")->unsigned();
+            $table->integer("parent_id")->unsigned()->nullable();
             //table data
             $table->text("path");
-            $table->string("storage_path");
+            //$table->text("storage_path");
             //times...
             $table->timestamps();
             $table->softDeletes();
             //foreign key stuff
             $table->foreign("owner_id")->references("id")->on("users");
+            $table->foreign("parent_id")->references("id")->on("directories");
         });
         Schema::create('shares', function (Blueprint $table) {
             $table->increments('id');
@@ -123,6 +125,7 @@ class InitialMigration extends Migration
             //$table->integer("access_id")->unsigned();
             $table->integer("user_id")->unsigned();
             $table->integer("share_id")->unsigned();
+            $table->integer("role_id")->unsigned();
             //foreign key stuff
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade")->onUpdate("cascade");
             $table->foreign("share_id")->references("id")->on("shares")->onDelete("cascade")->onUpdate("cascade");

@@ -4,20 +4,19 @@
 //import QuoteActions from '../actions/QuoteActions';
 //import LoginStore from '../../main/stores/LoginStore';
 import Api from '../../Api'
-import FileActions from '../actions/FileActionCreator'
+import FileCreator from '../actions/FileActionCreator'
 import {GET_TREE} from '../constants/FileConstants'
 
 class FileService {
     getFolderContent(path){
-      console.log(path);
         Api
             .get(GET_TREE,{'path':path})//should but the user token in here somewhere
             .then(function (data) {
-              console.log(data);
-                FileActions.gotFolderContent(path,data)
+                let files = data.children.concat(data.files);
+                FileCreator.gotFolderContent(path,files)
             })
             .catch(function (data) {
-                FileActions.gotApiError(data.message)
+                FileCreator.gotApiError(data.message)
             });
 
     }

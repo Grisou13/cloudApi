@@ -3,21 +3,32 @@
 import React from 'react'
 import FileList from './FileList'
 import Store from '../stores/FileStorage'
-import Creator from "../actions/FileActionCreator"
+import FileService from "../services/FileService"
 import Helpers from "../utils/FileHelpers"
 
 
 class BreadCrumbElement extends React.Component{
-  static handleClick()
+  constructor(){
+    super();
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick()
   {
-    Creator.clickFolder(this.props.path)
+    FileService.getFolderContent(this.props.path)
   }
   render()
   {
+    let active = this.props.path == Store.getCurrentPath();
+    let classes = "breadcrumb-element";
+    if(active)
+        classes += "active"
     return (
-      <span onClick={this.handleClick}>
-        {this.props.folder} >
-      </span>)
+        <li>
+            <a onClick={this.handleClick} className={"breadcrumb-element"}>
+              {this.props.folder}
+            </a>
+        </li>
+    )
   }
 }
 
@@ -35,9 +46,10 @@ class Breadcrumb extends React.Component{
       });
     }
     return (
-      <div className="breadcrumb">
+      <ol className="breadcrumb">
         {elements}
-      </div>
+        {this.props.addFolder}
+      </ol>
     );
   }
   /* jshint ignore:end */

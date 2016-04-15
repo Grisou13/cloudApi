@@ -7,7 +7,7 @@ use App\Api\Http\Requests\Request;
 class ContactStoreRequest extends Request
 {
     public static $rules = [
-        "name"=>"required|mind:1",
+        "name"=>"required|min:1",
         "photo"=>"sometimes|max:25000000",
         "emails"=>"sometimes",
         "addresses"=>"sometimes",

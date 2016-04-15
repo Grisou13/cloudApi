@@ -7,8 +7,7 @@ use App\Api\Http\Requests\Request;
 class ShareStoreRequest extends Request
 {
     public static $rules = [
-        "filepath"=>"required|min:2|unique:files,filepath",
-        "upload"=>"required"
+
     ];
     /**
      * Determine if the user is authorized to make this request.

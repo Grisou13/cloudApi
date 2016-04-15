@@ -4,10 +4,7 @@
  */
 var Dispatcher = require('../../AppDispatcher');
 var FileConstants = require('../constants/FileConstants');
-//var Store = require('../stores/FileStorage');
-//var Promise = require('es6-promise').Promise; // jshint ignore:line
-//var Api = require('../../utils/Api');
-import FileService from '../services/FileService'
+
 class FileCreator {
   /**
    *
@@ -19,24 +16,25 @@ class FileCreator {
   getRoot(){
     this.getFolderContent(FileConstants.ROOT);//the base is /
   }*/
-  gotFolderContent(path,files){
+  static gotFolderContent(path,files){
+
     Dispatcher.handleViewAction({
       actionType: FileConstants.GOT_DIRECTORY_CONTENT,
       files: files,
       path:path
     });
   }
-  gotApiError(message,errors){
+  static gotApiError(message,errors){
     Dispatcher.handleViewAction({
       actionType: FileConstants.RECEIVE_ERROR,
       error: message,
       errors:errors
     });
   }
-  gotFileContent(path,content){
+  static gotFileContent(path,content){
     Dispatcher.handleViewAction({
       actionType:FileConstants.RECEIVE_FILE_CONTENT,
-      file:file,
+      file:path,
       data:content
     });
   }
@@ -65,5 +63,5 @@ class FileCreator {
       });
   }*/
 }
-
-export default FileCreator
+module.exports = FileCreator;
+export default FileCreator;

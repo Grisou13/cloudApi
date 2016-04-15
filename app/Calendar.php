@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class Calendar extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,ResourceModel;
     protected $fillable = ["title"];
 
     /**
@@ -22,18 +22,12 @@ class Calendar extends Model
      * Get the shares for the calendar
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
-    public function shares()
-    {
-    	return $this->morphMany("App\\Share","shareable");
-    }
+
     public function events()
     {
-        return $this->hasMany("App\\Event");
+        return $this->hasMany(CalendarEvent::class);
     }
-    public function owner()
-    {
-        return $this->belongsTo("App\\User");
-    }
+
     public function setTitleAttribute($value)
     {
         if(!empty($value))

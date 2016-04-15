@@ -13,7 +13,7 @@ class ShareUpdateRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return $this->route("user")->id == $this->user()->id;
         /*$user = app("Dingo\\Api\\Auth\\Auth")->user();
         if(Bouncer::allow("update-user",$user) || $this->route("user")->id == $user->id){
             return true;
@@ -28,6 +28,6 @@ class ShareUpdateRequest extends Request
      */
     public function rules()
     {
-        return FileStoreRequest::$rules;//just keep the same rules as for storing
+        return ShareStoreRequest::$rules;//just keep the same rules as for storing
     }
 }

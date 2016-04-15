@@ -41,9 +41,9 @@ const routes = {
     indexRoute: { component: Dashboard },
     childRoutes: [
         require('./file_browser'),//the one of many componenets to require
-        {path:"login",name:"login",component:Login},
-        {path:"signup",name:"signup",component:Signup},
-        {path:"home",name:"home",component:Home}
+        {path:"/login",name:"login",component:Login},
+        {path:"/signup",name:"signup",component:Signup},
+        {path:"/home",name:"home",component:Home}
         //<Route name="signup" path="/signup" handler={Signup}/>
     ]
 }

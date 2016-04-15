@@ -29,11 +29,12 @@ class RouteServiceProvider extends ServiceProvider
         /*
          * Route model bindings
          */
-        /*$router->model("user","App\\User");
+        $router->model("user","App\\User");
         $router->model("file","App\\File");
+        $router->model("directory","App\\Directory");
         $router->model("contact","App\\Contact");
         $router->model('calendar','App\Calendar');
-        $router->model('event','App\Event');*/
+        $router->model('event','App\Event');
     }
 
     /**

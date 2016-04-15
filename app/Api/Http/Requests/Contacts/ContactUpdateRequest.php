@@ -26,6 +26,6 @@ class ContactUpdateRequest extends Request
      */
     public function rules()
     {
-        return ContactStoreRequest::$rules;//just keep the same rules as for storing
+        return array_merge(ContactStoreRequest::$rules,["name"=>"sometimes|min:1"]);//just keep the same rules as for storing
     }
 }

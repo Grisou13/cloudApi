@@ -24,18 +24,40 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/*
+ *
+ * Files
+ *
+ */
 $factory->define(App\Directory::class,function(Faker\Generator $faker){
     return [
-        "app_path"=>"/".join("/",$faker->words($faker->randomNumber(1))),
-        "storage_path"=>function($dir){
-            return storage_path("app/user_data/user_".$dir["owner_id"]."/".$dir["app_path"]);
-        }
+        "owner_id"=>factory(User::class)->create()->id,
+        "path"=>"/".$faker->word,
+        "parent_id"=>"1",
+
     ];
 });
-/*$factory->defineAs(User::class,"admin",function(Faker\Generator $faker) use ($factory){
-    $user = $factory->raw(User::class);
-    return array_merge($user,["id"=>"1"]);
-});*/
+
+$factory->define(App\File::class,function(Faker\Generator $faker){
+    $filename = "seeding/fixtures/image.jpg";
+    $path = basename($filename);
+
+    return [
+        "filename"=>$path,
+        "folder_id"=>factory(\App\Directory::class)->create()->id,
+        "owner_id"=>function($file){
+            return \App\Directory::find($file["folder_id"])->owner()->getResults();
+        }
+
+    ];
+});
+
+/*
+ *
+ * Calendar stuff
+ *
+ */
 $factory->define(App\CalendarEvent::class,function(Faker\Generator $faker){
     return [
         "uid"=>\Webpatser\Uuid\Uuid::generate(),
@@ -48,22 +70,20 @@ $factory->define(App\CalendarEvent::class,function(Faker\Generator $faker){
         "status"=>"ACCEPTED"
     ];
 });
-$factory->define(App\File::class,function(Faker\Generator $faker){
-    $filename = $faker->image(storage_path("tmp/"),$fullPath=false);
-    $path = "/{$faker->word}/".basename($filename);
 
-    return [
-        "filename"=>$path,
-        "owner_id"=>factory(User::class)->create()->id,
-
-    ];
-});
 $factory->define(App\Calendar::class,function(Faker\Generator $faker) {
     return [
         "title"=>$faker->words(5),
         "owner_id"=>factory(User::class)->create()->id
     ];
 });
+
+/*
+ *
+ * Contact
+ *
+ *
+ */
 $factory->define(App\Contact::class,function(Faker\Generator $faker){
     return [
         "name"=>$faker->name,

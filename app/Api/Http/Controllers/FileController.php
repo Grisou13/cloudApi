@@ -5,6 +5,7 @@ namespace App\Api\Http\Controllers;
 
 use App\Api\Http\Requests\Files\FileShowRequest;
 use App\Api\Http\Requests\Files\FileStoreRequest;
+use App\Api\Http\Requests\Files\FileUpdateRequest;
 use App\Api\Repositories\FileRepository;
 use App\Directory;
 use App\File;
@@ -17,9 +18,11 @@ use League\Flysystem\Util;
 use Storage;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * @property FileRepository repository
+ * @Resource("Files",uri="/v1/file")
  */
 class FileController extends Controller
 {
@@ -41,6 +44,105 @@ class FileController extends Controller
     /**
      * Display a listing of the resource.
      *
+
+     * #### Example
+     * ```
+     * curl -X GET http://ricci.cpnv-es.ch/api/v1/contact
+     * ```
+     *
+     * @Get("/")
+     * @Versions({"v1"})
+     * @Request({})
+     * @Response(200,body={
+    "status": "ok",
+    "payload": {
+    {
+    "id": 1,
+    "owner_id": "1",
+    "folder_id": "2",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:46",
+    "updated_at": "2016-04-14 23:49:46",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/molestiae/image.jpg",
+    "storage_path": "/app/user_data/id_1/molestiae/image.jpg",
+    "name": "image.jpg"
+    },
+    {
+    "id": 2,
+    "owner_id": "1",
+    "folder_id": "3",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:47",
+    "updated_at": "2016-04-14 23:49:47",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/architecto/image.jpg",
+    "storage_path": "/app/user_data/id_1/architecto/image.jpg",
+    "name": "image.jpg"
+    },
+    {
+    "id": 3,
+    "owner_id": "1",
+    "folder_id": "4",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:47",
+    "updated_at": "2016-04-14 23:49:47",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/quo/image.jpg",
+    "storage_path": "/app/user_data/id_1/quo/image.jpg",
+    "name": "image.jpg"
+    },
+    {
+    "id": 4,
+    "owner_id": "1",
+    "folder_id": "5",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:47",
+    "updated_at": "2016-04-14 23:49:47",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/aut/image.jpg",
+    "storage_path": "/app/user_data/id_1/aut/image.jpg",
+    "name": "image.jpg"
+    },
+    {
+    "id": 5,
+    "owner_id": "1",
+    "folder_id": "6",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:47",
+    "updated_at": "2016-04-14 23:49:47",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/dolore/image.jpg",
+    "storage_path": "/app/user_data/id_1/dolore/image.jpg",
+    "name": "image.jpg"
+    },
+    {
+    "id": 6,
+    "owner_id": "1",
+    "folder_id": "1",
+    "storage": "local",
+    "filename": "something.jpg",
+    "created_at": "2016-04-14 23:49:47",
+    "updated_at": "2016-04-14 23:49:47",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/something.jpg",
+    "storage_path": "/something.jpg",
+    "name": "something.jpg"
+    }
+    }
+    }
+    )
      * @param Request $request
      * @return \Illuminate\Http\Response
      */
@@ -52,7 +154,6 @@ class FileController extends Controller
                 $user = $request->get("user");
                 $query->where("id","=",$user);
             })->get();
-        //echo $user;
         return $user->files()->get();
     }
 
@@ -67,8 +168,33 @@ class FileController extends Controller
     }*/
 
     /**
-     * Store a newly created resource in storage.
+     * Create new file.
      *
+     * #### Example
+     * ```
+     * curl -X POST http://ricci.cpnv-es.ch/api/v1/calendar \\
+     * --data "{\"filepath\":\"/some/file/to/upload.txt\"}" \\
+     * -F upload=@/some/file/to/upload.txt
+     * ```
+     *
+     * @Post("/")
+     * @Versions({"v1"})
+     * @Request({"title":"a title name or something"})
+     * @Response(200,body={
+    "status": "ok" ,
+    "payload" : {
+    "id": "1",
+    "owner_id": "1",
+    "title": "My awesome new calendar",
+    "created_at": "2016-04-14 23:49:52",
+    "updated_at": "2016-04-14 23:49:52",
+    "deleted_at": null,
+    }
+    })
+     *
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     * @Response(404,body={"status": "error","payload":"The directory [directory] for the file [file] does not exist. You must create it first at http://ricci.cpnv-es.ch/api/v1/directory"})
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -88,9 +214,9 @@ class FileController extends Controller
             //create the modal
             $file = new File();
             $file->owner()->associate($user);
-            $dir = Directory::where("path",$pathinfo["dirname"])->first();
+            $dir = Directory::forUser($this->user())->where("path",str_replace("\\","/",$pathinfo["dirname"]))->first();
             if(!$dir->count())
-                throw new BadRequestHttpException("directory does not exist");
+                throw new NotFoundHttpException("The directory {$pathinfo["dirname"]} for the file ({$filepath})does not exist. You must create it first at http://ricci.cpnv-es.ch/api/v1/directory");
             $file->filename = $pathinfo["basename"];
             $file->folder()->associate($dir);
 
@@ -120,8 +246,19 @@ class FileController extends Controller
      */
     public function copy(Request $request)
     {
+        $to = $request->get("to");
+        $pathinfo = Util::pathinfo($to);
+        $toDirectory = Directory::forUser($this->user())->where("path",$pathinfo["dirname"])->first();
+
+        if(!$toDirectory->count())
+            throw new NotFoundHttpException("The directory {$pathinfo["dirname"]} for the file ($to})does not exist. You must create it first at http://ricci.cpnv-es.ch/api/v1/directory");
+        $from = $request->get("from");
+        $fromFile = File::forUser($this->user())->where("path",$from)->first();
+        if(!$fromFile->count())
+            throw new NotFoundHttpException("The file {$from} does not exist");
+        $fromFile->folder()->associate($toDirectory);//reassociate the directory to the new one where the file is copied
         $from = $this->repository->buildPath($request->get("from"));
-        $to = $this->repository->buildPath($request->get("to"));
+        $to = $this->repository->buildPath($to);
         $this->repository->copy($from,$to);
         return $this->response()->accepted();
     }
@@ -138,29 +275,6 @@ class FileController extends Controller
         return $this->response()->accepted();
     }
 
-    /**
-     * @param Request $request
-     * @return \Dingo\Api\Http\Response
-     */
-    public function addFolder(Request $request)
-    {
-        $path = $request->get("path");
-        if($this->repository->makeDirectory($path))
-            return $this->response->accepted();
-        throw new HttpException("could not create folder");
-    }
-
-    /**
-     * @param Request $request
-     * @return \Dingo\Api\Http\Response
-     */
-    public function deleteFolder(Request $request)
-    {
-        $path = $request->get("path");
-        if($this->repository->deleteDirectory($path))
-            return $this->response->accepted();
-        throw new HttpException("could not delete folder");
-    }
 
     /**
      * @param Request $request
@@ -173,49 +287,43 @@ class FileController extends Controller
     }
 
     /**
-     * @param Request $request
-     * @param Directory $dir
-     * @return mixed
-     */
-    public function shareFolder(Request $request,Directory $dir)
-    {
-        return $this->api->with(["resource"=>Directory::class,"id"=>$dir->id,"user"=>$request->get("users")])->post("share");
+     * Display the specified resource.
+     *
+     * #### Example
+     * ```
+     * curl -X GET http://ricci.cpnv-es.ch/api/v1/file/1
+     * ```
+     *
+     * @Get("/{file}")
+     * @Parameters({
+     *   @Parameter("file", description="The id of the file you want to view",required=true)
+     * })
+     * @Versions({"v1"})
+     * @Request({"file":"1"})
+     * @Response(200,body={
+    "status": "ok" ,
+    "payload" : {
+        "id": 1,
+        "owner_id": "1",
+        "folder_id": "2",
+        "storage": "local",
+        "filename": "image.jpg",
+        "created_at": "2016-04-14 23:49:46",
+        "updated_at": "2016-04-14 23:49:46",
+        "deleted_at": null,
+        "type": "file",
+        "path": "/molestiae/image.jpg",
+        "storage_path": "/app/user_data/id_1/molestiae/image.jpg",
+        "name": "image.jpg"
     }
 
-    /**
-     * @param Request $request
-     * @return array
-     */
-    public function tree(Request $request)
-    {
-        //dd($request->get("path"));
-        $path = $this->repository->buildPath($request->get("path"));
-        $user = $this->user();
-        /*foreach($this->repository->directories($path) as $dir){
-            $dirs[]=[
-                "type"=>"directory",
-                "filename"=>$dir
-            ];
-        }*/
-        $dirs = Directory::where("path",$path)->get();
-        $files = File::where("folder",$path)->get();
-        /*$shares = Share::with("owner")->whereHas("owner",function($query) use ($user){return $query->where("owner_id",'=',$user->id);});
-        $shares = $shares->groupBy("shareable_type");
-        foreach($shares as $share){
-            switch(get_class($share->shareable))
-            {
-                case "App\\Directory":
-                    $dirs->push(array_merge($share->shareable->toArray(),["type"=>"shareable_directory"]));
-                    break;
-                /*case "App\\File":
-                    $files->push(array_merge($share->shareable,["type"=>"shareable_file"]));
-                    break;*//*
-            }
-        }*/
-        return array_merge($dirs->toArray(),$files->toArray());
-    }
-    /**
-     * Display the specified resource.
+    })
+     *
+     * @Response(200,headers={"location":"http://ricci.cpnv-es.ch/api/v1/file/1"})
+     *
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     * @Response(404, body={"status":"error","payload":"not found File"})
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -225,35 +333,75 @@ class FileController extends Controller
         return $file;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    /*public function edit($id)
-    {
-        //
-    }*/
 
     /**
-     * Update the specified resource in storage.
+     * Update a file content
+     *
+     * #### Example
+     * ```
+     * curl -X PATCH http://ricci.cpnv-es.ch/api/v1/file/1 \\
+     * -F upload @/my/new/file/content/for/file_id_1.txt
+     * ```
+     *
+     * @Patch("/{file}")
+     * @Parameters({
+     *   @Parameter("file", description="The id of the file you want to view",required=true)
+     * })
+     * @Versions({"v1"})
+     * @Request({"upload":"@FileContent"})
+     * @Response(200,body={
+    "status": "ok" ,
+    "payload" :
+    {
+    "id": 1,
+    "owner_id": "1",
+    "folder_id": "2",
+    "storage": "local",
+    "filename": "image.jpg",
+    "created_at": "2016-04-14 23:49:46",
+    "updated_at": "2016-04-14 23:49:46",
+    "deleted_at": null,
+    "type": "file",
+    "path": "/molestiae/image.jpg",
+    "storage_path": "/app/user_data/id_1/molestiae/image.jpg",
+    "name": "image.jpg"
+    }
+
+    })
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     * @Response(404, body={"status":"error","payload":"not found File"})
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, File $file)
+    public function update(FileUpdateRequest $request, File $file)
     {
         if( $request->hasFile("upload") && $request->file("upload")->isValid() )
             $this->repository->put($file->storage_path,$request->file("upload"));
-        if($request->has("content"))
-            $this->repository->put($file->storage_path,$request->get("content"));
+
         return $this->response->accepted();
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete file
+     *
+     * #### Example
+     * ```
+     * curl -X DELETE http://ricci.cpnv-es.ch/api/v1/file/1
+     * ```
+     *
+     * @Delete("/{file}")
+     * @Parameters({
+     *   @Parameter("file", description="The id of the file you want to view",required=true)
+     * })
+     * @Versions({"v1"})
+     * @Request({})
+     * @Response(204)
+     * @Response(401, body={"status": "error","payload": "The token you provided has unauthorized access to this resource","error":"unauthorized token"})
+     * @Response(401, body={"status": "error","payload": "The token could not be parsed","error":"malformed_token"})
+     * @Response(404, body={"status":"error","payload":"not found File"})
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -262,5 +410,7 @@ class FileController extends Controller
     {
         $file->delete();
         $this->repository->delete($file->storage_path);
+        $this->response->noContent();
     }
+
 }

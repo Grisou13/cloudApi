@@ -24,7 +24,8 @@ class ApiServiceProvider extends ServiceProvider
     {
         parent::boot($router);
         app('Dingo\Api\Exception\Handler')->register(function (ModelNotFoundException $exception) {
-            throw new NotFoundHttpException($exception->getMessage(),$previous = $exception);
+            $modelName = basename($exception->getModel());
+            throw new NotFoundHttpException("not found {$modelName}" ,$previous = $exception);
         });
     }
 

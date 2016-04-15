@@ -27,76 +27,101 @@ class FileRepository implements Filesystem
     /**
      * @var null|User
      */
-    protected $user;
+    protected $user = null;
 
     /**
      * @var \Illuminate\Contracts\Filesystem\Filesystem
      */
     protected $storage;
+    /**
+     * 
+     * @var string
+     */
     protected $root = "/app/user_data/";
 
     /**
      * FileRepository constructor.
      * @param User|null $user
      */
-    public function __construct(/*User $user*/)
+    public function __construct()
     {
-        //$this->setUser($user);
-        //$this->base_path = storage_path($this->getBasePath());
         $this->storage = $this->getStorage();
-
     }
     public function create($data)
     {
         
     }
-    public static function instance(User $user)
+    public static function instanceForAuthenticatedUser()
     {
-      $self = new static($user);
+        return self::instanceForUser(app(Auth::class)->user());
+    }
+    public static function instanceForUser($user)
+    {
+      $self = new static();
 
       $self->setUser($user);
       return $self;
+    }
+
+    /**
+     * @param $path
+     * @param $user
+     * @return string
+     */
+    public static function buildPathForUser($path,$user)
+    {
+        /** @var FileRepository $self */
+        $self = self::instanceForUser($user);
+        $self->setUser($user);
+        return $self->buildPath($path);
     }
     /**
      * @return User|null
      * @throws \Exception
      */
-    public function user()
+/*    public function user()
     {
         $user = $this->user;
         try{
             if($user == null){
-                $user = app(Auth::class)->user();
+                $user = ;
                 $this->user = $user;
             }
         }catch(\Exception $e){
             throw new \Exception("Failed to get user data : ".print_r($this->user,true));
         }
         return $user;
-    }
+    }*/
 
     /**
-     * Helper to construct the path for a file. /some/file, will be in storage /app/user_data/id:{userid}/some/file
+     * Helper to construct the path for a file. /some/file, will be in storage /app/user_data/id_{userid}/some/file
+     * If the path that is passed already exists somewhere in the storage, it will just return it
      * @param $path
-     * @param bool|string $storage
-     * @return null
+     * @param string $storage
+     * @return string
      */
-    public function buildPath($path,$storage = true)
+    public function buildPath($path,$storage = "local")
     {
+        $path = str_replace("\\","/",$path);
         //die(var_dump($this->user));
-        if(!Str::startsWith($path,"/"))
+        if(!Str::startsWith($path,"/") && !Str::startsWith($path,"./"))
             $path = "/".$path;
 
-        if($storage)//$storage = true means we want some sort of app defined storage, otherwise, we just return the path
+        switch($storage)//$storage = true means we want some sort of app defined storage, otherwise, we just return the path
         {
-            if(file_exists($path))
+            case "dropbox":
                 return $path;
-            if(file_exists(storage_path($path)))
-                return storage_path($path);
+                break;
+            default:
+                if(file_exists($path))//an absolute path
+                    return $path;
+                if(file_exists(storage_path($path)))//maybe something in storage?
+                    //return storage_path($path);
+                    return $path;
 
-            return $this->getBasePath().$path;
+                return $this->getBasePath().$path;
+                break;
         }
-        return $path;
     }
     public function getRoot()
     {
@@ -109,7 +134,7 @@ class FileRepository implements Filesystem
     public function getBasePath()
     {
 
-        $user = $this->user();
+        $user = $this->getUser();
         //dd($user->toArray());
         if(!$user)
             return $this->getRoot();
@@ -134,6 +159,8 @@ class FileRepository implements Filesystem
      */
     public function copy($from,$to)
     {
+
+        $from = $this->buildPath($from);
         $to = $this->buildPath($to);
         return  $this->getStorage()->copy($from,$to);
     }
@@ -165,7 +192,8 @@ class FileRepository implements Filesystem
      */
     public function move($from,$to)
     {
-        $this->getStorage()->move($this->buildPath($from),$this->buildPath($to));
+
+        $this->getStorage()->move($from,$this->buildPath($to));
     }
 
     /**

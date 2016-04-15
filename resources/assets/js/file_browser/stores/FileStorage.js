@@ -4,6 +4,7 @@ import Dispatcher from '../../AppDispatcher'
 import FileConstants from '../constants/FileConstants'
 import {EventEmitter} from 'events';
 import assign from 'object-assign'
+import BaseStore from  '../../BaseStore'
 
 let CHANGE_EVENT = 'change',
     _files = [],
@@ -22,78 +23,68 @@ function setCurrentDir(path){
 /*class FileStorage extends BaseStore{
 
 }*/
-var FileStorage = assign({}, EventEmitter.prototype, {
+class FileStorage extends BaseStore {
 
-  /**
-   * Emits change event.
-   */
-  emitChange: function () {
-    this.emit(CHANGE_EVENT);
-  },
+    constructor() {
+        super();
+        this.subscribe(() => this._registerToActions.bind(this))
+        this._files = [];
+        this._path = FileConstants.ROOT_DIR;
+    }
 
-  /**
-   * Adds a change listener.
-   *
-   * @param {function} callback Callback function.
-   */
-  addChangeListener: function (callback) {
-    this.on(CHANGE_EVENT, callback);
-  },
+    _registerToActions(payload) {
+        var action = payload.action || payload;
 
-  /**
-   * Removes a change listener.
-   *
-   * @param {function} callback Callback function.
-   */
-  removeChangeListener: function (callback) {
-    this.removeListener(CHANGE_EVENT, callback);
-  },
+        switch (action.actionType) {
+            case FileConstants.RECEIVE_FILES:
+                this._files = action.files;
+                this._path = action.path;
+                break;
+            case FileConstants.CHANGE_DIRECTORY:
+                this._files = action.files;
+                this._path = action.path;
+                break;
+            case FileConstants.ADD_DIRECTORY:
+                this._files = action.files;
+                this._path = action.path;
+                break;
+            case FileConstants.GOT_DIRECTORY_CONTENT:
+                this._files = action.files;
+                this._path = action.path;
+                break;
+            default:
+                return true;
+        }
+        this.emitChange();
+        return true;
+    }
+
 
   /**
    * Return the value for categories.
    */
-  getFiles: function () {
-    return _files;
-  },
+  getFiles () {
+      /*console.log("files from storage")
+      console.log(this._files)*/
+    return this._files;
+  }
   getState(){
     return {files:this.getFiles(),path:this.getCurrentPath()}
-  },
-  getCurrentPath: function(){
-    return _path;
-  },
-  getCurrentFolderContent: function(){
-    return this.getFiles();
-  },
-  getRootFolderContent:function(){
+  }
+  getCurrentPath(){
+    return this._path;
+  }
+  getCurrentFolderContent(){
     return this.getFiles();
   }
-});
-
-FileStorage.dispatchToken = Dispatcher.register(function (payload) {
-  var action = payload.action || payload;
-
-  switch (action.actionType) {
-    case FileConstants.RECEIVE_FILES:
-        setCurrentDir(action.path);
-        setFiles(action.files);
-        break;
-    case FileConstants.CHANGE_DIRECTORY:
-        setCurrentDir(action.path);
-        setFiles(action.files);
-        break;
-    case FileConstants.ADD_DIRECTORY:
-        setCurrentDir(action.path);
-        setFiles(action.files);
-        break;
-    case FileConstants.GOT_DIRECTORY_CONTENT:
-        setFiles(action.files);
-        setCurrentDir(action.path);
-        break;
-    default:
-      return true;
+  getRootFolderContent(){
+    return this.getFiles();
   }
-  FileStorage.emitChange();
-  return true;
-});
+}
 
-module.exports = FileStorage;
+/*FileStorage.dispatchToken = Dispatcher.register(function (payload) {
+
+});*/
+
+module.exports = new FileStorage();
+export default new FileStorage();

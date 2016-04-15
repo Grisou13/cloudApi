@@ -4,37 +4,45 @@ import request from 'superagent'
 import {Promise} from 'es6-promise'// jshint ignore:line
 import API_CONSTANTS,{BASE_URL} from "./ApiConstants.js"
 import LoginStore from './main/stores/LoginStore'
+import AuthService from './main/services/AuthService'
 /**
  * Wrapper for calling a API
  */
 //let headers;
-let store = LoginStore;
-console.log(store.isLoggedIn());
-console.log(LoginStore.isLoggedIn());
-//if(LoginStore.jwt !== null)
-let jwt = localStorage.getItem('jwt');
-let headers = {'Authorization' : `Bearer  ${jwt}` };
-console.log(headers);
+let store = LoginStore
 
-var Api = {
-  get: function (url,data = {},files = {}) {
+
+class Api
+{
+  static getHeaders(){
+    let jwt = LoginStore.getJwt()
+    let headers = {'Authorization' : `Bearer  ${jwt}` }
+    return headers
+  }
+  static get(url,data = {},files = {}) {
     return new Promise(function (resolve, reject) {
       request
         .get(url)
         .query(data)
         //.attach(files)
         .type("json")
-        .set(headers)
+        .set(Api.getHeaders())
         .end(function (err,res) {
-          console.log("==== getting some data ====")
           console.log(res);
-          console.log(err);
+
           if(err){
+            console.log(err);
             reject(res);
           }
-          if (res.status === 404) {
+          if (res.status === 404 || res.status == 403) {
             reject(res);
-          } else {
+          }
+
+          else if(res.status === 401 && res.body.message === "Token has expired"){
+            AuthService.refreshToken()
+            Api.get(url,data,files);//rerun the query with the new jwt
+          }
+          else {
             if(res.body.status == API_CONSTANTS.STATUS_OK){
               resolve(res.body.payload);
             } else {
@@ -43,8 +51,8 @@ var Api = {
           }
         });
     });
-  },
-  post:function(url,data = {},files = {}){
+  }
+  static post(url,data = {},files = {}){
 
     return new Promise(function(resolve,reject){
       request
@@ -52,17 +60,29 @@ var Api = {
       .send(data)
       //.attach(files)
       .type("json")
-      .set(headers)
+      .set(Api.getHeaders())
       .end(function (err,res) {
-        console.log("======== finish posting ======")
         console.log(res);
-        console.log(err);
+
         if(err){
+          console.log(err);
           reject(res);
         }
-        if (res.status === 404) {
+
+        if (res.status === 404 || res.status == 403) {
           reject(res);
-        } else {
+        }
+        else if(res.status === 401)
+        {
+          if(res.body.message === "The token has been blacklisted")
+              AuthService.logout();
+          if(res.body.message === "Token has expired")
+          {
+            AuthService.refreshToken(LoginStore.getJwt())//refresh the token
+            Api.post(url,data,files);//rerun the query with the new jwt
+          }
+        }
+        else {
           if(res.body.status == API_CONSTANTS.STATUS_OK){
             resolve(res.body.payload);
           } else {
@@ -72,7 +92,7 @@ var Api = {
       });
     });
   }
-};
+}
 
 module.exports = Api;
 // var BASE_URL = 'localhost:8600';

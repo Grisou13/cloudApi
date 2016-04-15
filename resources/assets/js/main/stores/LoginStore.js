@@ -42,6 +42,7 @@ class LoginStore extends BaseStore {
   isLoggedIn() {
     return !!this._user;
   }
+  
 }
 
 export default new LoginStore();

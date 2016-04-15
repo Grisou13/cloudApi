@@ -1,5 +1,5 @@
 import Api from '../../Api';
-import {LOGIN_URL, SIGNUP_URL} from '../constants/LoginConstants';
+import {LOGIN_URL, SIGNUP_URL, REFRESH_URL} from '../constants/LoginConstants';
 import LoginActions from '../actions/LoginActions';
 
 class AuthService {
@@ -15,7 +15,10 @@ class AuthService {
   signup(username, password, email) {
     return this.handleAuth(Api.post(SIGNUP_URL,{username:username,password:password,email:email}));
   }
-
+  refreshToken(){
+    localStorage.removeItem("jwt");
+    return this.handleAuth(Api.post(REFRESH_URL))
+  }
   handleAuth(loginPromise) {
     return loginPromise
       .then(function(response) {

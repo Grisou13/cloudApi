@@ -14,7 +14,7 @@ class ContactShowRequest extends Request
      */
     public function authorize(Bouncer $gate)
     {
-        if($this->route("contact")->owner()->getResults()->id == $this->user()->id)
+        if($this->route("contact")->owner->id == $this->user()->id)
             return true;
         if($gate->allows("view-others-contacts",$this->user()))
             return true;

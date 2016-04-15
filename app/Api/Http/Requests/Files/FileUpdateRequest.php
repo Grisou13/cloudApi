@@ -28,6 +28,6 @@ class FileUpdateRequest extends Request
      */
     public function rules()
     {
-        return FileStoreRequest::$rules;//just keep the same rules as for storing
+        return ["upload"=>FileStoreRequest::$rules["upload"]];//just keep the same rules as for storing
     }
 }

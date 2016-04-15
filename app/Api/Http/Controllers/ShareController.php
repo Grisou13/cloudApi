@@ -2,6 +2,8 @@
 
 namespace App\Api\Http\Controllers;
 
+use App\Api\Http\Requests\Shares\ShareAddMemberRequest;
+use App\Api\Http\Requests\Shares\ShareDestroyRequest;
 use App\Api\Repositories\FileRepository;
 use App\Directory;
 use App\Share;
@@ -48,25 +50,12 @@ class ShareController extends Controller
         $user = $this->user();
         if($request->has("user") && Bouncer::allows("view-others-shares",$user))//admins can see others people files
         {
-            dd("asdsg");
-            return Share::whereHas("owner",function($query) use ($request){
-                $user = $request->get("user");
-                $query->where("id","=",$user);
-            })->get();
+            return Share::forUser($request->get("user"))->get();
         }
         //echo $user;
         return $user->shares()->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -85,31 +74,7 @@ class ShareController extends Controller
 
         $id = $request->get("id");
 
-        try{
-            $shareable = $resource_name::find($id);
-        }catch(\Exception $e){
-
-            //if the ressource is a Directory and the Dir model wasn't created (we don't create a directory for every insertion of files...common db would be in pain)
-            //a directory is dimacly created, allowing the db to not be overwlemed with requests, everytime a file is put in a directory
-            if($resource_name == Directory::class)
-            {
-                $path = $request->get("path");
-                //if the directory path already exists and we can find it
-                if(! $shareable = Directory::find(["path"=>$path]))
-                {
-                    //maybe we can create it ?
-                    if($this->repository->exists($path))
-                    {
-
-                        $shareable = Directory::create(["path"=>$path]);
-                        $shareable->owner()->associate($this->user());
-                        $shareable->save();
-                    }
-                }
-            }
-            throw $e;//just throw the exception
-        }
-
+        $shareable = $resource_name::find($id);
 
         $user_id = $request->get("user");
         //$user = User::findOrFail($user_id);
@@ -137,16 +102,6 @@ class ShareController extends Controller
         return $share;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -155,9 +110,9 @@ class ShareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Share $share)
     {
-        //
+
     }
 
     /**
@@ -166,9 +121,10 @@ class ShareController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ShareDestroyRequest $request,Share $share)
     {
-        //
+        $share->delete();
+        return $this->response()->noContent();
     }
     public function ownedShares(User $user)
     {
@@ -180,15 +136,21 @@ class ShareController extends Controller
             $query->where("id","=",$user->id);
         })->get();
     }
-    public function leaveShare()
+    public function leaveShare(Request $request,Share $share,User $user)
     {
+        $share->participants()->detach($user->getKey());
+        $share->save();
+        return $share;
         //get the user
         //desassociate with the participants of a share
         //return
     }
-    public function addToShare(Request $request)
+    public function addToShare(ShareAddMemberRequest $request,Share $share, User $user)
     {
         //add the user to the participants
+        $share->participants()->attach($user->getKey());
+        $share->save();
+        return $share;
         //return
     }
 }

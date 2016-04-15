@@ -198,7 +198,7 @@ type RouteComponent = Component;
 
 The term *route component* refers to a [component](#component) that is directly rendered by a [route](#route) (i.e. the `<Route component>`). The router creates elements from route components and provides them as `this.props.children` to route components further up the hierarchy. In addition to `children`, route components receive the following props:
 
-  - `router` – The [router](#router) instance
+  - `router` – The [router](#router) instanceForUser
   - `location` – The current [location](#location)
   - `params` – The current [params](#params)
   - `route` – The [route](#route) that declared this component

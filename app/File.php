@@ -10,7 +10,7 @@ use League\Flysystem\Util;
 
 class File extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes,ResourceModel;
     /**
      * The attributes that should be mutated to dates.
      *
@@ -20,30 +20,33 @@ class File extends Model
 
     protected $fillable = ["filename"];
     //protected $attributes = ["full_path"];//add extra attributes to the model
-    protected $appends = ["type"/*"full_path","folder","filename"*/];//add it to the json representation
+    protected $appends = ["type","path","storage_path","name"];//add it to the json representation
     protected $hidden = [/*"storage_path","storage","filepath"*/];
 
 
-    public function shares()
-    {
-    	return $this->morphMany("App\\Share","shareable");
-    }
-    public function owner()
-    {
-        return $this->belongsTo(User::class);
-    }
+
     public function folder()
     {
         return $this->belongsTo(Directory::class);
     }
-    public function getTypeAttribute()
+
+    public function getPathAttribute()
     {
-        return $this->attributes["type"]="file";
+        $path = $this->folder()->getResults()->path;
+        $path = Str::endsWith($path,"/")?$path:$path."/";
+        return $path.$this->attributes["filename"];
     }
-    /*public function getFolderAttribute()
+    public function getStoragePathAttribute()
     {
-        return str_replace("\\","/",Util::pathinfo($this->folder()->getResults()->app_path)["dirname"]);
+        $path = $this->folder()->getResults()->storage_path;
+        $path = Str::endsWith($path,"/")?$path:$path."/";
+        return $path.$this->attributes["filename"];
     }
+    public function getNameAttribute()
+    {
+        return $this->attributes["filename"];
+    }
+    /*
     public function getFilenameAttribute()
     {
         return Util::pathinfo($this->attributes["filepath"])["basename"];

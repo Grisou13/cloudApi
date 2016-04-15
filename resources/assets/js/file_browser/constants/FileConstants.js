@@ -11,8 +11,8 @@ const config = {
   ROOT_DIR:"/",
   GET_FILES:BASE_URL+"/"+API_VERSION+"/file",
   UPLOAD_FILE:BASE_URL+"/"+API_VERSION+"/file",
-  GET_TREE:BASE_URL+"/"+API_VERSION+"/tree",
-  ADD_DIR:BASE_URL+"/"+API_VERSION+"/add_directory"
+  GET_TREE:BASE_URL+"/"+API_VERSION+"/directory/tree",
+  ADD_DIR:BASE_URL+"/"+API_VERSION+"/directory"
 };
 export default config
 module.exports = config
